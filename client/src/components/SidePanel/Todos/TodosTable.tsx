@@ -32,7 +32,7 @@ import { Textarea } from '~/components/ui/Textarea';
 import OGDialogTemplate from '~/components/ui/OGDialogTemplate';
 import Spinner from '~/components/svg/Spinner';
 
-const pageSize = 10;
+const pageSize = 3;
 
 const FILTERS = [
   { key: 'all', label: 'All' },
@@ -64,10 +64,14 @@ const TodosTable = () => {
     let filtered = todos;
     if (filter === 'active') filtered = filtered.filter((t) => t.status !== 'Completed');
     if (filter === 'completed') filtered = filtered.filter((t) => t.status === 'Completed');
-    if (searchQuery)
-      filtered = filtered.filter((todo) =>
-        todo.title.toLowerCase().includes(searchQuery.toLowerCase()),
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (todo) =>
+          todo.title.toLowerCase().includes(q) ||
+          (todo.description && todo.description.toLowerCase().includes(q)),
       );
+    }
     return filtered;
   }, [todos, filter, searchQuery]);
 
@@ -115,19 +119,38 @@ const TodosTable = () => {
           </Button>
         ))}
       </div>
+      <div className="px-2 pb-2">
+        <Input
+          type="text"
+          placeholder="Search todos..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full"
+          aria-label="Search todos by title or description"
+        />
+      </div>
       <div className="border-border-light rounded-lg border bg-transparent shadow-sm transition-colors">
         <Table className="w-full table-fixed">
+          <colgroup>
+            <col style={{ width: '5%' }} />
+            <col style={{ width: '40%' }} />
+            <col style={{ width: '40%' }} />
+            <col style={{ width: '15%' }} />
+          </colgroup>
           <TableHeader>
             <TableRow className="border-border-light border-b">
-              <TableHead className="bg-surface-secondary text-text-secondary w-[5%] py-1 text-left text-sm font-medium"></TableHead>
-              <TableHead className="bg-surface-secondary text-text-secondary w-[45%] py-1 text-left text-sm font-medium">
-                <div className="px-2">Title</div>
+              <TableHead className="bg-surface-secondary text-text-secondary py-1 text-left text-sm font-medium whitespace-nowrap"></TableHead>
+              <TableHead className="bg-surface-secondary text-text-secondary w-2/5 px-2 py-1 text-left align-middle text-sm font-medium break-words">
+                {/* TODO: i18n */}
+                Title
               </TableHead>
-              <TableHead className="bg-surface-secondary text-text-secondary w-[35%] py-1 text-left text-sm font-medium">
-                <div className="px-2">Description</div>
+              <TableHead className="bg-surface-secondary text-text-secondary w-2/5 px-2 py-1 text-left align-middle text-sm font-medium break-words">
+                {/* TODO: i18n */}
+                Description
               </TableHead>
-              <TableHead className="bg-surface-secondary text-text-secondary w-[15%] py-1 text-left text-sm font-medium">
-                <div className="px-2">Actions</div>
+              <TableHead className="bg-surface-secondary text-text-secondary w-1/5 px-2 py-1 text-left align-middle text-sm font-medium break-words">
+                {/* TODO: i18n */}
+                Actions
               </TableHead>
             </TableRow>
           </TableHeader>
@@ -135,17 +158,20 @@ const TodosTable = () => {
             {currentRows.length ? (
               currentRows.map((todo) => (
                 <TableRow key={todo._id} className="h-auto min-h-0 py-0">
-                  <TableCell className="py-1 align-middle">
-                    <Checkbox
-                      checked={todo.status === 'Completed'}
-                      onCheckedChange={(checked) => {
-                        updateTodoMutation.mutate({
-                          id: todo._id,
-                          updates: { status: checked ? 'Completed' : 'Pending' },
-                        });
-                      }}
-                      id={`todo-${todo._id}`}
-                    />
+                  <TableCell className="py-1 pl-2 align-middle break-words">
+                    <div className="flex w-full items-center justify-start">
+                      <Checkbox
+                        checked={todo.status === 'Completed'}
+                        onCheckedChange={(checked) => {
+                          updateTodoMutation.mutate({
+                            id: todo._id,
+                            updates: { status: checked ? 'Completed' : 'Pending' },
+                          });
+                        }}
+                        id={`todo-${todo._id}`}
+                        className="mr-2 ml-0"
+                      />
+                    </div>
                   </TableCell>
                   <TableCell className="py-1 align-middle">
                     <Label
@@ -157,12 +183,12 @@ const TodosTable = () => {
                       {todo.title}
                     </Label>
                   </TableCell>
-                  <TableCell className="text-muted-foreground py-1 align-middle text-xs">
+                  <TableCell className="text-muted-foreground py-1 align-middle text-xs break-words">
                     {todo.description || (
                       <span className="text-gray-400 italic">No description</span>
                     )}
                   </TableCell>
-                  <TableCell className="flex gap-1 py-1 align-middle">
+                  <TableCell className="flex gap-1 py-1 align-middle break-words">
                     <Dialog
                       open={editOpen === todo._id}
                       onOpenChange={(open) => {
