@@ -771,6 +771,17 @@ export const tConversationTagSchema = z.object({
 });
 export type TConversationTag = z.infer<typeof tConversationTagSchema>;
 
+export const tTodoSchema = z.object({
+  _id: z.string(),
+  user: z.string(),
+  title: z.string(),
+  description: z.string().optional(),
+  status: z.enum(['Pending', 'In Progress', 'Completed']),
+  createdAt: z.string(),
+  updatedAt: z.string(),
+});
+export type TTodo = z.infer<typeof tTodoSchema>;
+
 export const googleBaseSchema = tConversationSchema.pick({
   model: true,
   modelLabel: true,

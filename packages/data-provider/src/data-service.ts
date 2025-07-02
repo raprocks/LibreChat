@@ -720,7 +720,6 @@ export function createConversationTag(
 ): Promise<t.TConversationTagResponse> {
   return request.post(endpoints.conversationTags(), payload);
 }
-
 export function updateConversationTag(
   tag: string,
   payload: t.TConversationTagRequest,
@@ -739,6 +738,27 @@ export function addTagToConversation(
 }
 export function rebuildConversationTags(): Promise<t.TConversationTagsResponse> {
   return request.post(endpoints.conversationTags('rebuild'));
+}
+
+/* Todo */
+
+export function getTodos(status?: string): Promise<t.TTodo[]> {
+  const url = status
+    ? `${endpoints.todos()}?status=${encodeURIComponent(status)}`
+    : endpoints.todos();
+  return request.get(url);
+}
+
+export function createTodo(payload: t.TCreateTodo): Promise<t.TCreateTodoResponse> {
+  return request.post(endpoints.todos(), payload);
+}
+
+export function updateTodo(id: string, payload: t.TUpdateTodo): Promise<t.TUpdateTodoResponse> {
+  return request.put(endpoints.todos(id), payload);
+}
+
+export function deleteTodo(id: string): Promise<t.TDeleteTodoResponse> {
+  return request.delete(endpoints.todos(id));
 }
 
 export function healthCheck(): Promise<string> {

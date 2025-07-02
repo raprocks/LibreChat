@@ -9,6 +9,7 @@ import type {
   EModelEndpoint,
   TConversationTag,
   TBanner,
+  TTodo,
 } from './schemas';
 export type TOpenAIMessage = OpenAI.Chat.ChatCompletionMessageParam;
 
@@ -220,6 +221,24 @@ export type TTagConversationRequest = {
 };
 
 export type TTagConversationResponse = string[];
+
+/* Todos */
+
+export type TTodosResponse = TTodo[];
+// Allow status to be updated (for checkbox toggle)
+// Allow status to be updated (for checkbox toggle)
+export type TTodoRequest = Partial<Omit<TTodo, 'createdAt' | 'updatedAt' | 'user'>>;
+
+// For create, return the created todo
+export type TCreateTodo = TTodoRequest;
+export type TCreateTodoResponse = TTodo;
+
+// For update, return the updated todo
+export type TUpdateTodo = TTodoRequest;
+export type TUpdateTodoResponse = TTodo;
+
+// For delete, return a success boolean or object
+export type TDeleteTodoResponse = { success: boolean };
 
 export type TDuplicateConvoRequest = {
   conversationId?: string;

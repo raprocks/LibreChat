@@ -66,3 +66,6 @@ export type { ITransaction } from './schema/transaction';
 
 export { default as userSchema } from './schema/user';
 export type { IUser } from './schema/user';
+
+export { default as todoSchema } from './schema/todo';
+export type { ITodo } from './schema/todo';

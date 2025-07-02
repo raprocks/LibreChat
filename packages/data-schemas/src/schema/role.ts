@@ -26,6 +26,11 @@ export interface IRole extends Document {
     [PermissionTypes.RUN_CODE]?: {
       [Permissions.USE]?: boolean;
     };
+    [PermissionTypes.TODOS]?: {
+      [Permissions.USE]?: boolean;
+      [Permissions.CREATE]?: boolean;
+      [Permissions.UPDATE]?: boolean;
+    };
   };
 }
 
@@ -54,6 +59,11 @@ const rolePermissionsSchema = new Schema(
     [PermissionTypes.RUN_CODE]: {
       [Permissions.USE]: { type: Boolean, default: true },
     },
+    [PermissionTypes.TODOS]: {
+      [Permissions.USE]: { type: Boolean, default: true },
+      [Permissions.CREATE]: { type: Boolean, default: true },
+      [Permissions.UPDATE]: { type: Boolean, default: true },
+    },
   },
   { _id: false },
 );
@@ -77,6 +87,11 @@ const roleSchema: Schema<IRole> = new Schema({
       [PermissionTypes.MULTI_CONVO]: { [Permissions.USE]: true },
       [PermissionTypes.TEMPORARY_CHAT]: { [Permissions.USE]: true },
       [PermissionTypes.RUN_CODE]: { [Permissions.USE]: true },
+      [PermissionTypes.TODOS]: {
+        [Permissions.USE]: true,
+        [Permissions.CREATE]: true,
+        [Permissions.UPDATE]: true,
+      },
     }),
   },
 });

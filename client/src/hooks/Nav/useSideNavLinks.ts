@@ -1,22 +1,23 @@
-import { useMemo } from 'react';
-import { MessageSquareQuote, ArrowRightToLine, Settings2, Bookmark } from 'lucide-react';
+import type { TEndpointsConfig, TInterfaceConfig } from 'librechat-data-provider';
 import {
-  isAssistantsEndpoint,
-  isAgentsEndpoint,
-  PermissionTypes,
-  isParamEndpoint,
   EModelEndpoint,
+  isAgentsEndpoint,
+  isAssistantsEndpoint,
+  isParamEndpoint,
   Permissions,
+  PermissionTypes,
 } from 'librechat-data-provider';
-import type { TInterfaceConfig, TEndpointsConfig } from 'librechat-data-provider';
+import { ArrowRightToLine, Bookmark, ListTodo, MessageSquareQuote, Settings2 } from 'lucide-react';
+import { useMemo } from 'react';
 import type { NavLink } from '~/common';
+import PromptsAccordion from '~/components/Prompts/PromptsAccordion';
 import AgentPanelSwitch from '~/components/SidePanel/Agents/AgentPanelSwitch';
 import BookmarkPanel from '~/components/SidePanel/Bookmarks/BookmarkPanel';
 import PanelSwitch from '~/components/SidePanel/Builder/PanelSwitch';
-import PromptsAccordion from '~/components/Prompts/PromptsAccordion';
-import Parameters from '~/components/SidePanel/Parameters/Panel';
 import FilesPanel from '~/components/SidePanel/Files/Panel';
-import { Blocks, AttachmentIcon } from '~/components/svg';
+import Parameters from '~/components/SidePanel/Parameters/Panel';
+import TodosPanel from '~/components/SidePanel/Todos/TodosPanel';
+import { AttachmentIcon, Blocks } from '~/components/svg';
 import { useHasAccess } from '~/hooks';
 
 export default function useSideNavLinks({
@@ -51,6 +52,11 @@ export default function useSideNavLinks({
     permission: Permissions.CREATE,
   });
 
+  const hasAccessToTodos = useHasAccess({
+    permissionType: PermissionTypes.TODOS,
+    permission: Permissions.USE,
+  });
+  console.log('has access to todos:', hasAccessToTodos);
   const Links = useMemo(() => {
     const links: NavLink[] = [];
     if (
@@ -130,6 +136,16 @@ export default function useSideNavLinks({
       });
     }
 
+    if (hasAccessToTodos) {
+      links.push({
+        title: 'com_sidepanel_todos',
+        label: '',
+        icon: ListTodo,
+        id: 'todos',
+        Component: TodosPanel,
+      });
+    }
+
     links.push({
       title: 'com_sidepanel_hide_panel',
       label: '',
@@ -149,6 +165,7 @@ export default function useSideNavLinks({
     hasAccessToPrompts,
     hasAccessToBookmarks,
     hasAccessToCreateAgents,
+    hasAccessToTodos,
     hidePanel,
   ]);
 

@@ -96,6 +96,11 @@ export const roleDefaults = defaultRolesSchema.parse({
       [PermissionTypes.RUN_CODE]: {
         [Permissions.USE]: true,
       },
+      [PermissionTypes.TODOS]: {
+        [Permissions.USE]: true,
+        [Permissions.CREATE]: true,
+        [Permissions.UPDATE]: true,
+      },
     },
   },
   [SystemRoles.USER]: {
@@ -107,6 +112,11 @@ export const roleDefaults = defaultRolesSchema.parse({
       [PermissionTypes.MULTI_CONVO]: {},
       [PermissionTypes.TEMPORARY_CHAT]: {},
       [PermissionTypes.RUN_CODE]: {},
+      [PermissionTypes.TODOS]: {
+        [Permissions.USE]: true,
+        [Permissions.CREATE]: true,
+        [Permissions.UPDATE]: true,
+      },
     },
   },
 });
