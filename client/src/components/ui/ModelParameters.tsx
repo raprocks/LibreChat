@@ -104,7 +104,7 @@ const ModelParameters: React.FC<ModelParametersProps> = ({
         <div className="flex items-center gap-2">
           <output
             htmlFor={id}
-            className={`select-none text-sm font-medium ${
+            className={`text-sm font-medium select-none ${
               disabled ? 'text-gray-400 dark:text-gray-400' : ''
             }`}
             aria-live="polite"

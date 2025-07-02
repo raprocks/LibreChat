@@ -33,9 +33,7 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
             </label>
           </div>
           <div className="border-token-border-medium flex rounded-lg border text-sm hover:cursor-pointer">
-            <div className="h-9 grow px-3 py-2">
-              {localize(getAuthLocalizationKey(type))}
-            </div>
+            <div className="h-9 grow px-3 py-2">{localize(getAuthLocalizationKey(type))}</div>
             <div className="bg-token-border-medium w-px"></div>
             <button type="button" color="neutral" className="flex items-center gap-2 px-3">
               <svg
@@ -58,8 +56,8 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
           </div>
         </div>
       </OGDialogTrigger>
-      <OGDialogContent className="w-full max-w-md border-none bg-surface-primary text-text-primary">
-        <OGDialogHeader className="border-b border-border-light sm:p-3">
+      <OGDialogContent className="bg-surface-primary text-text-primary w-full max-w-md border-none">
+        <OGDialogHeader className="border-border-light border-b sm:p-3">
           <OGDialogTitle>{localize('com_ui_authentication')}</OGDialogTitle>
         </OGDialogHeader>
         <div className="p-4 sm:p-6 sm:pt-0">
@@ -89,7 +87,7 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
                       'border-border-heavy bg-surface-primary',
                     )}
                   >
-                    <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+                    <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
                   </RadioGroup.Item>
                   {localize('com_ui_none')}
                 </label>
@@ -106,7 +104,7 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
                       'border-border-heavy bg-surface-primary',
                     )}
                   >
-                    <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+                    <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
                   </RadioGroup.Item>
                   {localize('com_ui_api_key')}
                 </label>
@@ -131,7 +129,7 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
                       disableOAuth === true ? 'cursor-not-allowed' : '',
                     )}
                   >
-                    <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+                    <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
                   </RadioGroup.Item>
                   {localize('com_ui_oauth')}
                 </label>
@@ -142,7 +140,7 @@ export default function ActionsAuth({ disableOAuth }: { disableOAuth?: boolean }
           {/* Cancel/Save */}
           <div className="mt-5 flex flex-col gap-3 sm:mt-4 sm:flex-row-reverse">
             <button
-              className="btn relative bg-surface-submit text-primary-foreground hover:bg-surface-submit-hover"
+              className="btn bg-surface-submit text-primary-foreground hover:bg-surface-submit-hover relative"
               onClick={async () => {
                 const result = await trigger(undefined, { shouldFocus: true });
                 setValue('saved_auth_fields', result);
@@ -180,7 +178,7 @@ const ApiKey = () => {
         className={cn(
           'mb-2 h-9 w-full resize-none overflow-y-auto rounded-lg border px-3 py-2 text-sm',
           'border-border-medium bg-surface-primary outline-none',
-          'focus:ring-2 focus:ring-ring',
+          'focus:ring-ring focus:ring-2',
         )}
         {...register('api_key', { required: type === AuthTypeEnum.ServiceHttp })}
       />
@@ -207,7 +205,7 @@ const ApiKey = () => {
                 'border-border-heavy bg-surface-primary',
               )}
             >
-              <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+              <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
             </RadioGroup.Item>
             {localize('com_ui_basic')}
           </label>
@@ -224,7 +222,7 @@ const ApiKey = () => {
                 'border-border-heavy bg-surface-primary',
               )}
             >
-              <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+              <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
             </RadioGroup.Item>
             {localize('com_ui_bearer')}
           </label>
@@ -241,7 +239,7 @@ const ApiKey = () => {
                 'border-border-heavy bg-surface-primary',
               )}
             >
-              <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+              <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
             </RadioGroup.Item>
             {localize('com_ui_custom')}
           </label>
@@ -256,7 +254,7 @@ const ApiKey = () => {
             className={cn(
               'mb-2 h-9 w-full resize-none overflow-y-auto rounded-lg border px-3 py-2 text-sm',
               'border-border-medium bg-surface-primary outline-none',
-              'focus:ring-2 focus:ring-ring',
+              'focus:ring-ring focus:ring-2',
             )}
             placeholder="X-Api-Key"
             {...register('custom_auth_header', {
@@ -350,7 +348,7 @@ const OAuth = () => {
                 'border-border-heavy bg-surface-primary',
               )}
             >
-              <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+              <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
             </RadioGroup.Item>
             {localize('com_ui_default_post_request')}
           </label>
@@ -367,7 +365,7 @@ const OAuth = () => {
                 'border-border-heavy bg-surface-primary',
               )}
             >
-              <RadioGroup.Indicator className="h-2 w-2 rounded-full bg-text-primary" />
+              <RadioGroup.Indicator className="bg-text-primary h-2 w-2 rounded-full" />
             </RadioGroup.Item>
             {localize('com_ui_basic_auth_header')}
           </label>

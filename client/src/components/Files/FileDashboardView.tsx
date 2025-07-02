@@ -8,7 +8,7 @@ const FileDashboardView = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-[#f9f9f9] p-0 lg:p-7">
-      <div className="ml-3 mt-3 flex flex-row justify-between">
+      <div className="mt-3 ml-3 flex flex-row justify-between">
         {params.vectorStoreId && (
           <Button
             className="block lg:hidden"

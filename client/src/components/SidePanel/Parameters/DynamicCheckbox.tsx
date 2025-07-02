@@ -66,7 +66,7 @@ function DynamicCheckbox({
               htmlFor={`${settingKey}-dynamic-checkbox`}
               className="text-left text-sm font-medium"
             >
-              {labelCode ? localize(label as TranslationKeys) ?? label : label || settingKey}{' '}
+              {labelCode ? (localize(label as TranslationKeys) ?? label) : label || settingKey}{' '}
               {showDefault && (
                 <small className="opacity-40">
                   ({localize('com_endpoint_default')}:{' '}
@@ -79,13 +79,17 @@ function DynamicCheckbox({
               disabled={readonly}
               checked={selectedValue}
               onCheckedChange={handleCheckedChange}
-              className="mt-[2px] focus:ring-opacity-20 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-50 dark:focus:ring-gray-600 dark:focus:ring-opacity-50 dark:focus:ring-offset-0"
+              className="focus:ring-opacity-20 dark:focus:ring-opacity-50 mt-[2px] dark:border-gray-500 dark:bg-gray-700 dark:text-gray-50 dark:focus:ring-gray-600 dark:focus:ring-offset-0"
             />
           </div>
         </HoverCardTrigger>
         {description && (
           <OptionHover
-            description={descriptionCode ? localize(description as TranslationKeys) ?? description : description}
+            description={
+              descriptionCode
+                ? (localize(description as TranslationKeys) ?? description)
+                : description
+            }
             side={ESide.Left}
           />
         )}

@@ -11,10 +11,10 @@ const AdvancedSwitch = () => {
   const setAlwaysMakeProd = useSetRecoilState(alwaysMakeProd);
 
   return (
-    <div className="relative flex h-10 items-center justify-center rounded-xl border border-border-light bg-surface-primary transition-all duration-300">
+    <div className="border-border-light bg-surface-primary relative flex h-10 items-center justify-center rounded-xl border transition-all duration-300">
       <div className="relative flex w-48 items-stretch md:w-64">
         <div
-          className="absolute rounded-lg bg-surface-hover shadow-lg transition-all duration-300 ease-in-out"
+          className="bg-surface-hover absolute rounded-lg shadow-lg transition-all duration-300 ease-in-out"
           style={{
             top: '1px',
             left: mode === PromptsEditorMode.SIMPLE ? '2px' : 'calc(50% + 2px)',

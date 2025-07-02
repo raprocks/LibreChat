@@ -133,7 +133,7 @@ function ConvoOptions({
       {
         label: localize('com_ui_share'),
         onClick: handleShareClick,
-        icon: <Share2 className="icon-sm mr-2 text-text-primary" />,
+        icon: <Share2 className="icon-sm text-text-primary mr-2" />,
         show: startupConfig && startupConfig.sharedLinksEnabled,
         hideOnClick: false,
         ref: shareButtonRef,
@@ -142,7 +142,7 @@ function ConvoOptions({
       {
         label: localize('com_ui_rename'),
         onClick: renameHandler,
-        icon: <Pen className="icon-sm mr-2 text-text-primary" />,
+        icon: <Pen className="icon-sm text-text-primary mr-2" />,
       },
       {
         label: localize('com_ui_duplicate'),
@@ -151,7 +151,7 @@ function ConvoOptions({
         icon: isDuplicateLoading ? (
           <Spinner className="size-4" />
         ) : (
-          <Copy className="icon-sm mr-2 text-text-primary" />
+          <Copy className="icon-sm text-text-primary mr-2" />
         ),
       },
       {
@@ -161,13 +161,13 @@ function ConvoOptions({
         icon: isArchiveLoading ? (
           <Spinner className="size-4" />
         ) : (
-          <Archive className="icon-sm mr-2 text-text-primary" />
+          <Archive className="icon-sm text-text-primary mr-2" />
         ),
       },
       {
         label: localize('com_ui_delete'),
         onClick: handleDeleteClick,
-        icon: <Trash className="icon-sm mr-2 text-text-primary" />,
+        icon: <Trash className="icon-sm text-text-primary mr-2" />,
         hideOnClick: false,
         ref: deleteButtonRef,
         render: (props) => <button {...props} />,
@@ -202,10 +202,10 @@ function ConvoOptions({
             id={`conversation-menu-${conversationId}`}
             aria-label={localize('com_nav_convo_menu_options')}
             className={cn(
-              'inline-flex h-7 w-7 items-center justify-center gap-2 rounded-md border-none p-0 text-sm font-medium ring-ring-primary transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50',
+              'ring-ring-primary inline-flex h-7 w-7 items-center justify-center gap-2 rounded-md border-none p-0 text-sm font-medium transition-all duration-200 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:opacity-50',
               isActiveConvo === true || isPopoverActive
                 ? 'opacity-100'
-                : 'opacity-0 focus:opacity-100 group-focus-within:opacity-100 group-hover:opacity-100 data-[open]:opacity-100',
+                : 'opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 focus:opacity-100 data-[open]:opacity-100',
             )}
             onClick={(e: MouseEvent<HTMLButtonElement>) => {
               e.stopPropagation();

@@ -47,7 +47,7 @@ export default function Nav({ links, isCollapsed, resize, defaultActive }: NavPr
                             resize && resize(25);
                           }}
                         >
-                          <link.icon className="h-4 w-4 text-text-secondary" />
+                          <link.icon className="text-text-secondary h-4 w-4" />
                           <span className="sr-only">{localize(link.title)}</span>
                         </Button>
                       }
@@ -66,7 +66,7 @@ export default function Nav({ links, isCollapsed, resize, defaultActive }: NavPr
                             <Button
                               variant="outline"
                               size="sm"
-                              className="w-full justify-start bg-transparent text-text-secondary data-[state=open]:bg-surface-secondary data-[state=open]:text-text-primary"
+                              className="text-text-secondary data-[state=open]:bg-surface-secondary data-[state=open]:text-text-primary w-full justify-start bg-transparent"
                               onClick={(e) => {
                                 if (link.onClick) {
                                   link.onClick(e);
@@ -90,7 +90,7 @@ export default function Nav({ links, isCollapsed, resize, defaultActive }: NavPr
                           </AccordionPrimitive.Trigger>
                         </AccordionPrimitive.Header>
 
-                        <AccordionContent className="w-full text-text-primary">
+                        <AccordionContent className="text-text-primary w-full">
                           {link.Component && <link.Component />}
                         </AccordionContent>
                       </AccordionItem>

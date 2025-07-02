@@ -186,7 +186,7 @@ const Nav = memo(
         <div
           data-testid="nav"
           className={cn(
-            'nav active max-w-[320px] flex-shrink-0 overflow-x-hidden bg-surface-primary-alt',
+            'nav active bg-surface-primary-alt max-w-[320px] flex-shrink-0 overflow-x-hidden',
             'md:max-w-[260px]',
           )}
           style={{

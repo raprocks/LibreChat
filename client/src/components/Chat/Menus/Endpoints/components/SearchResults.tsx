@@ -69,7 +69,7 @@ export function SearchResults({ results, localize, searchValue }: SearchResultsP
                 <div className="flex min-w-0 flex-col gap-1">
                   <span className="truncate text-left">{spec.label}</span>
                   {spec.description && (
-                    <span className="break-words text-xs font-normal">{spec.description}</span>
+                    <span className="text-xs font-normal break-words">{spec.description}</span>
                   )}
                 </div>
               </div>
@@ -102,22 +102,22 @@ export function SearchResults({ results, localize, searchValue }: SearchResultsP
             const filteredModels = endpoint.label.toLowerCase().includes(lowerQuery)
               ? endpoint.models
               : endpoint.models.filter((model) => {
-                let modelName = model.name;
-                if (
-                  isAgentsEndpoint(endpoint.value) &&
+                  let modelName = model.name;
+                  if (
+                    isAgentsEndpoint(endpoint.value) &&
                     endpoint.agentNames &&
                     endpoint.agentNames[model.name]
-                ) {
-                  modelName = endpoint.agentNames[model.name];
-                } else if (
-                  isAssistantsEndpoint(endpoint.value) &&
+                  ) {
+                    modelName = endpoint.agentNames[model.name];
+                  } else if (
+                    isAssistantsEndpoint(endpoint.value) &&
                     endpoint.assistantNames &&
                     endpoint.assistantNames[model.name]
-                ) {
-                  modelName = endpoint.assistantNames[model.name];
-                }
-                return modelName.toLowerCase().includes(lowerQuery);
-              });
+                  ) {
+                    modelName = endpoint.assistantNames[model.name];
+                  }
+                  return modelName.toLowerCase().includes(lowerQuery);
+                });
 
             if (!filteredModels.length) {
               return null; // skip if no models match

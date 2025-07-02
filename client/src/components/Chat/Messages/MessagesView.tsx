@@ -48,7 +48,7 @@ export default function MessagesView({
               {(_messagesTree && _messagesTree.length == 0) || _messagesTree === null ? (
                 <div
                   className={cn(
-                    'flex w-full items-center justify-center p-3 text-text-secondary',
+                    'text-text-secondary flex w-full items-center justify-center p-3',
                     fontSize,
                   )}
                 >

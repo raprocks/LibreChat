@@ -47,10 +47,10 @@ const ConvoLink: React.FC<ConvoLinkProps> = ({
       </div>
       <div
         className={cn(
-          'absolute bottom-0 right-0 top-0 w-20 rounded-r-lg bg-gradient-to-l',
+          'absolute top-0 right-0 bottom-0 w-20 rounded-r-lg bg-gradient-to-l',
           isActiveConvo
             ? 'from-surface-active-alt'
-            : 'from-surface-primary-alt from-0% to-transparent group-hover:from-surface-active-alt group-hover:from-40%',
+            : 'from-surface-primary-alt group-hover:from-surface-active-alt from-0% to-transparent group-hover:from-40%',
         )}
         aria-hidden="true"
       />

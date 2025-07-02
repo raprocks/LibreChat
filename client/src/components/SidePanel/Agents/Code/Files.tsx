@@ -70,7 +70,7 @@ export default function Files({
   return (
     <div className="mb-2 w-full">
       <div className="flex flex-col gap-3">
-        <div className="rounded-lg text-xs text-text-secondary">
+        <div className="text-text-secondary rounded-lg text-xs">
           {localize('com_assistants_code_interpreter_files')}
         </div>
         <FileRow

@@ -162,7 +162,7 @@ export default function SharedLinks() {
           return (
             <Button
               variant="ghost"
-              className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+              className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
               onClick={() =>
                 handleSort('title', isSorted && sortDirection === 'asc' ? 'desc' : 'asc')
               }
@@ -207,7 +207,7 @@ export default function SharedLinks() {
           return (
             <Button
               variant="ghost"
-              className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+              className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
               onClick={() =>
                 handleSort('createdAt', isSorted && sortDirection === 'asc' ? 'desc' : 'asc')
               }
@@ -232,7 +232,7 @@ export default function SharedLinks() {
       {
         accessorKey: 'actions',
         header: () => (
-          <Label className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm">
+          <Label className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm">
             {localize('com_assistants_actions')}
           </Label>
         ),
@@ -247,7 +247,7 @@ export default function SharedLinks() {
               render={
                 <Button
                   variant="ghost"
-                  className="h-8 w-8 p-0 hover:bg-surface-hover"
+                  className="hover:bg-surface-hover h-8 w-8 p-0"
                   onClick={() => {
                     window.open(`/c/${row.original.conversationId}`, '_blank');
                   }}
@@ -262,7 +262,7 @@ export default function SharedLinks() {
               render={
                 <Button
                   variant="ghost"
-                  className="h-8 w-8 p-0 hover:bg-surface-hover"
+                  className="hover:bg-surface-hover h-8 w-8 p-0"
                   onClick={() => {
                     setDeleteRow(row.original);
                     setIsDeleteOpen(true);
@@ -291,7 +291,7 @@ export default function SharedLinks() {
 
         <OGDialogContent
           title={localize('com_nav_my_files')}
-          className="w-11/12 max-w-5xl bg-background text-text-primary shadow-2xl"
+          className="bg-background text-text-primary w-11/12 max-w-5xl shadow-2xl"
         >
           <OGDialogHeader>
             <OGDialogTitle>{localize('com_nav_shared_links')}</OGDialogTitle>

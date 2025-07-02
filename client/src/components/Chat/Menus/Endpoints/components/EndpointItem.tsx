@@ -36,8 +36,8 @@ const SettingsButton = ({
         handleOpenKeyDialog(endpoint.value as EModelEndpoint, e);
       }}
       className={cn(
-        'flex items-center overflow-visible text-text-primary transition-all duration-300 ease-in-out',
-        'group/button rounded-md px-1 hover:bg-surface-secondary focus:bg-surface-secondary',
+        'text-text-primary flex items-center overflow-visible transition-all duration-300 ease-in-out',
+        'group/button hover:bg-surface-secondary focus:bg-surface-secondary rounded-md px-1',
         className,
       )}
       aria-label={`${text} ${endpoint.label}`}
@@ -102,12 +102,12 @@ export function EndpointItem({ endpoint }: EndpointItemProps) {
   if (endpoint.hasModels) {
     const filteredModels = searchValue
       ? filterModels(
-        endpoint,
-        (endpoint.models || []).map((model) => model.name),
-        searchValue,
-        agentsMap,
-        assistantsMap,
-      )
+          endpoint,
+          (endpoint.models || []).map((model) => model.name),
+          searchValue,
+          agentsMap,
+          assistantsMap,
+        )
       : null;
     const placeholder =
       isAgentsEndpoint(endpoint.value) || isAssistantsEndpoint(endpoint.value)

@@ -55,11 +55,11 @@ export default function Badge({
       onClick={handleClick}
       className={cn(
         'group relative inline-flex items-center gap-1.5 rounded-full px-4 py-1.5',
-        'border border-border-medium text-sm font-medium transition-shadow md:w-full',
+        'border-border-medium border text-sm font-medium transition-shadow md:w-full',
         'size-9 p-2 md:p-3',
         isActive
           ? 'bg-surface-active shadow-md'
-          : 'bg-surface-chat shadow-sm hover:bg-surface-hover hover:shadow-md',
+          : 'bg-surface-chat hover:bg-surface-hover shadow-sm hover:shadow-md',
         'active:scale-95 active:shadow-inner',
         isMoveable && 'cursor-move',
         isDisabled && 'cursor-not-allowed opacity-50 hover:shadow-sm',
@@ -78,7 +78,7 @@ export default function Badge({
 
       {isEditing && !isDragging && (
         <motion.button
-          className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-surface-secondary-alt text-text-primary shadow-sm md:h-5 md:w-5"
+          className="bg-surface-secondary-alt text-text-primary absolute -top-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full shadow-sm md:h-5 md:w-5"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}

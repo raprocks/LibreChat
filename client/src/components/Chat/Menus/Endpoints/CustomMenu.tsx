@@ -44,7 +44,7 @@ export const CustomMenu = React.forwardRef<HTMLDivElement, CustomMenuProps>(func
         {...props}
         className={cn(
           !parent &&
-            'flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-border-light px-3 py-2 text-sm text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white',
+            'border-border-light text-text-primary flex h-10 w-full items-center justify-center gap-2 rounded-xl border px-3 py-2 text-sm focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none',
           menuStore.useState('open')
             ? 'bg-surface-tertiary hover:bg-surface-tertiary'
             : 'bg-surface-secondary hover:bg-surface-tertiary',
@@ -62,9 +62,9 @@ export const CustomMenu = React.forwardRef<HTMLDivElement, CustomMenuProps>(func
         unmountOnHide
         gutter={parent ? -4 : 4}
         className={cn(
-          `${parent ? 'animate-popover-left ml-3' : 'animate-popover'} outline-none! z-50 flex max-h-[min(450px,var(--popover-available-height))] w-full`,
-          'w-[var(--menu-width,auto)] min-w-[300px] flex-col overflow-auto rounded-xl border border-border-light',
-          'bg-surface-secondary px-3 py-2 text-sm text-text-primary shadow-lg',
+          `${parent ? 'animate-popover-left ml-3' : 'animate-popover'} z-50 flex max-h-[min(450px,var(--popover-available-height))] w-full outline-none!`,
+          'border-border-light w-[var(--menu-width,auto)] min-w-[300px] flex-col overflow-auto rounded-xl border',
+          'bg-surface-secondary text-text-primary px-3 py-2 text-sm shadow-lg',
           'max-w-[calc(100vw-4rem)] sm:max-h-[calc(65vh)] sm:max-w-[400px]',
           searchable && 'p-0',
         )}
@@ -79,7 +79,7 @@ export const CustomMenu = React.forwardRef<HTMLDivElement, CustomMenuProps>(func
                   className={cn(
                     'h-10 w-full rounded-lg border-none bg-transparent px-2 text-base',
                     'sm:h-8 sm:text-sm',
-                    'focus:outline-none focus:ring-0 focus-visible:ring-2 focus-visible:ring-white',
+                    'focus:ring-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white',
                   )}
                 />
               </div>

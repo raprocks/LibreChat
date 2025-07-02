@@ -79,7 +79,7 @@ const DragDropModal = ({ onOptionSelect, setShowModal, files, isVisible }: DragD
                   <button
                     key={index}
                     onClick={() => onOptionSelect(option.value)}
-                    className="flex items-center gap-2 rounded-lg p-2 hover:bg-surface-active-alt"
+                    className="hover:bg-surface-active-alt flex items-center gap-2 rounded-lg p-2"
                   >
                     {option.icon}
                     <span>{option.label}</span>

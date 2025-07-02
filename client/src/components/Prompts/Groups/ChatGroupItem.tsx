@@ -80,7 +80,7 @@ function ChatGroupItem({
                     e.stopPropagation();
                   }
                 }}
-                className="z-50 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-border-medium bg-transparent p-0 text-sm font-medium transition-all duration-300 ease-in-out hover:border-border-heavy hover:bg-surface-hover focus:border-border-heavy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+                className="border-border-medium hover:border-border-heavy hover:bg-surface-hover focus:border-border-heavy z-50 inline-flex h-8 w-8 items-center justify-center rounded-lg border bg-transparent p-0 text-sm font-medium transition-all duration-300 ease-in-out focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
               >
                 <MenuIcon className="icon-md text-text-secondary" aria-hidden="true" />
                 <span className="sr-only">
@@ -103,7 +103,7 @@ function ChatGroupItem({
                   e.stopPropagation();
                   setPreviewDialogOpen(true);
                 }}
-                className="w-full cursor-pointer rounded-lg text-text-secondary hover:bg-surface-hover focus:bg-surface-hover disabled:cursor-not-allowed"
+                className="text-text-secondary hover:bg-surface-hover focus:bg-surface-hover w-full cursor-pointer rounded-lg disabled:cursor-not-allowed"
               >
                 <TextSearch className="mr-2 h-4 w-4" aria-hidden="true" />
                 <span>{localize('com_ui_preview')}</span>
@@ -112,7 +112,7 @@ function ChatGroupItem({
                 <DropdownMenuGroup>
                   <DropdownMenuItem
                     disabled={!isOwner}
-                    className="cursor-pointer rounded-lg text-text-secondary hover:bg-surface-hover focus:bg-surface-hover disabled:cursor-not-allowed"
+                    className="text-text-secondary hover:bg-surface-hover focus:bg-surface-hover cursor-pointer rounded-lg disabled:cursor-not-allowed"
                     onClick={(e) => {
                       e.stopPropagation();
                       onEditClick(e);

@@ -192,13 +192,13 @@ const EditPresetDialog = ({
                 </div>
               </div>
             </div>
-            <div className="my-4 w-full border-t border-border-medium" />
+            <div className="border-border-medium my-4 w-full border-t" />
             <div className="w-full p-0">
               <EndpointSettings
                 conversation={preset}
                 setOption={setOption}
                 isPreset={true}
-                className="h-full text-text-primary md:mb-4 md:h-[440px]"
+                className="text-text-primary h-full md:mb-4 md:h-[440px]"
               />
             </div>
           </div>

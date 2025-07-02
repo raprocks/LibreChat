@@ -75,7 +75,7 @@ function DynamicTags({
 
       if (minTags != null && currentTags.length <= minTags) {
         showToast({
-          message: localize('com_ui_min_tags',{ 0: minTags + '' }),
+          message: localize('com_ui_min_tags', { 0: minTags + '' }),
           status: 'warning',
         });
         return;
@@ -126,7 +126,7 @@ function DynamicTags({
               htmlFor={`${settingKey}-dynamic-input`}
               className="text-left text-sm font-medium"
             >
-              {labelCode ? localize(label as TranslationKeys) ?? label : label || settingKey}{' '}
+              {labelCode ? (localize(label as TranslationKeys) ?? label) : label || settingKey}{' '}
               {showDefault && (
                 <small className="opacity-40">
                   (
@@ -139,7 +139,7 @@ function DynamicTags({
             </Label>
           </div>
           <div>
-            <div className="mb-2 flex flex-wrap break-all rounded-lg bg-surface-secondary">
+            <div className="bg-surface-secondary mb-2 flex flex-wrap rounded-lg break-all">
               {currentTags && currentTags.length > 0 && (
                 <div className="flex w-full gap-1 p-1">
                   {currentTags.map((tag: string, index: number) => (
@@ -174,15 +174,23 @@ function DynamicTags({
                   }
                 }}
                 onChange={(e) => setTagText(e.target.value)}
-                placeholder={placeholderCode ? localize(placeholder as TranslationKeys) ?? placeholder : placeholder}
-                className={cn('flex h-10 max-h-10 border-none bg-surface-secondary px-3 py-2')}
+                placeholder={
+                  placeholderCode
+                    ? (localize(placeholder as TranslationKeys) ?? placeholder)
+                    : placeholder
+                }
+                className={cn('bg-surface-secondary flex h-10 max-h-10 border-none px-3 py-2')}
               />
             </div>
           </div>
         </HoverCardTrigger>
         {description && (
           <OptionHover
-            description={descriptionCode ? localize(description as TranslationKeys) ?? description : description}
+            description={
+              descriptionCode
+                ? (localize(description as TranslationKeys) ?? description)
+                : description
+            }
             side={descriptionSide as ESide}
           />
         )}

@@ -151,13 +151,13 @@ const AdminSettings = () => {
           <Button
             size="sm"
             variant="outline"
-            className="mr-2 h-10 w-fit gap-1 border transition-all dark:bg-transparent dark:hover:bg-surface-tertiary sm:m-0"
+            className="dark:hover:bg-surface-tertiary mr-2 h-10 w-fit gap-1 border transition-all sm:m-0 dark:bg-transparent"
           >
             <ShieldEllipsis className="cursor-pointer" aria-hidden="true" />
             <span className="hidden sm:flex">{localize('com_ui_admin')}</span>
           </Button>
         </OGDialogTrigger>
-        <OGDialogContent className="w-11/12 max-w-lg border-border-light bg-surface-primary text-text-primary">
+        <OGDialogContent className="border-border-light bg-surface-primary text-text-primary w-11/12 max-w-lg">
           <OGDialogTitle>
             {`${localize('com_ui_admin_settings')} - ${localize('com_ui_prompts')}`}
           </OGDialogTitle>
@@ -171,7 +171,7 @@ const AdminSettings = () => {
                 isOpen={isRoleMenuOpen}
                 setIsOpen={setIsRoleMenuOpen}
                 trigger={
-                  <Ariakit.MenuButton className="inline-flex w-1/5 items-center justify-center rounded-lg border border-border-light bg-transparent px-2 py-1 text-text-primary transition-all ease-in-out hover:bg-surface-tertiary">
+                  <Ariakit.MenuButton className="border-border-light text-text-primary hover:bg-surface-tertiary inline-flex w-1/5 items-center justify-center rounded-lg border bg-transparent px-2 py-1 transition-all ease-in-out">
                     {selectedRole}
                   </Ariakit.MenuButton>
                 }
@@ -201,7 +201,7 @@ const AdminSettings = () => {
                     />
                     {selectedRole === SystemRoles.ADMIN && promptPerm === Permissions.USE && (
                       <>
-                        <div className="mb-2 max-w-full whitespace-normal break-words text-sm text-red-600">
+                        <div className="mb-2 max-w-full text-sm break-words whitespace-normal text-red-600">
                           <span>{localize('com_ui_admin_access_warning')}</span>
                           {'\n'}
                           <a

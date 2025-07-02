@@ -104,7 +104,7 @@ const AssistantConversationStarters: React.FC<AssistantConversationStartersProps
                   ...transitionStyles[state as keyof typeof transitionStyles],
                   transition: state === 'entering' ? 'none' : defaultStyle.transition,
                 }}
-                className="absolute right-1 top-1"
+                className="absolute top-1 right-1"
               >
                 <TooltipAnchor
                   side="top"
@@ -113,7 +113,7 @@ const AssistantConversationStarters: React.FC<AssistantConversationStartersProps
                       ? localize('com_assistants_max_starters_reached')
                       : localize('com_ui_add')
                   }
-                  className="flex size-7 items-center justify-center rounded-lg transition-colors duration-200 hover:bg-surface-hover"
+                  className="hover:bg-surface-hover flex size-7 items-center justify-center rounded-lg transition-colors duration-200"
                   onClick={handleAddStarter}
                   disabled={hasReachedMax}
                 >
@@ -140,7 +140,7 @@ const AssistantConversationStarters: React.FC<AssistantConversationStartersProps
             <TooltipAnchor
               side="top"
               description={localize('com_ui_delete')}
-              className="absolute right-1 top-1 flex size-7 items-center justify-center rounded-lg transition-colors duration-200 hover:bg-surface-hover"
+              className="hover:bg-surface-hover absolute top-1 right-1 flex size-7 items-center justify-center rounded-lg transition-colors duration-200"
               onClick={() => handleDeleteStarter(index)}
             >
               <X className="size-4" />

@@ -87,7 +87,7 @@ export default function Footer({ className }: { className?: string }) {
       <div
         className={
           className ??
-          'absolute bottom-0 left-0 right-0 hidden items-center justify-center gap-2 px-2 py-2 text-center text-xs text-text-primary sm:flex md:px-[60px]'
+          'text-text-primary absolute right-0 bottom-0 left-0 hidden items-center justify-center gap-2 px-2 py-2 text-center text-xs sm:flex md:px-[60px]'
         }
         role="contentinfo"
       >
@@ -99,7 +99,7 @@ export default function Footer({ className }: { className?: string }) {
               {!isLastElement && (
                 <div
                   key={`separator-${index}`}
-                  className="h-2 border-r-[1px] border-border-medium"
+                  className="border-border-medium h-2 border-r-[1px]"
                 />
               )}
             </React.Fragment>

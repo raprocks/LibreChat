@@ -10,7 +10,7 @@ const Wrapper = ({ popover, children }: { popover: boolean; children: React.Reac
       <div className={wrapperClass}>
         <Popover.Trigger asChild>
           <div
-            className="progress-text-content absolute left-0 top-0 line-clamp-1 overflow-visible"
+            className="progress-text-content absolute top-0 left-0 line-clamp-1 overflow-visible"
             style={{ opacity: 1, transform: 'none' }}
             data-projection-id="78"
           >
@@ -24,7 +24,7 @@ const Wrapper = ({ popover, children }: { popover: boolean; children: React.Reac
   return (
     <div className={wrapperClass}>
       <div
-        className="progress-text-content absolute left-0 top-0 line-clamp-1 overflow-visible"
+        className="progress-text-content absolute top-0 left-0 line-clamp-1 overflow-visible"
         style={{ opacity: 1, transform: 'none' }}
         data-projection-id="78"
       >

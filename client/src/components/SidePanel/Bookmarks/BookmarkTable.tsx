@@ -75,17 +75,17 @@ const BookmarkTable = () => {
           />
         </div>
 
-        <div className="rounded-lg border border-border-light bg-transparent shadow-sm transition-colors">
+        <div className="border-border-light rounded-lg border bg-transparent shadow-sm transition-colors">
           <Table className="w-full table-fixed">
             <TableHeader>
-              <TableRow className="border-b border-border-light">
-                <TableHead className="w-[70%] bg-surface-secondary py-3 text-left text-sm font-medium text-text-secondary">
+              <TableRow className="border-border-light border-b">
+                <TableHead className="bg-surface-secondary text-text-secondary w-[70%] py-3 text-left text-sm font-medium">
                   <div className="px-4">{localize('com_ui_bookmarks_title')}</div>
                 </TableHead>
-                <TableHead className="w-[30%] bg-surface-secondary py-3 text-left text-sm font-medium text-text-secondary">
+                <TableHead className="bg-surface-secondary text-text-secondary w-[30%] py-3 text-left text-sm font-medium">
                   <div className="px-4">{localize('com_ui_bookmarks_count')}</div>
                 </TableHead>
-                <TableHead className="w-[40%] bg-surface-secondary py-3 text-left text-sm font-medium text-text-secondary">
+                <TableHead className="bg-surface-secondary text-text-secondary w-[40%] py-3 text-left text-sm font-medium">
                   <div className="px-4">{localize('com_assistants_actions')}</div>
                 </TableHead>
               </TableRow>
@@ -95,7 +95,7 @@ const BookmarkTable = () => {
                 currentRows.map(renderRow)
               ) : (
                 <TableRow>
-                  <TableCell colSpan={3} className="h-24 text-center text-sm text-text-secondary">
+                  <TableCell colSpan={3} className="text-text-secondary h-24 text-center text-sm">
                     {localize('com_ui_no_bookmarks')}
                   </TableCell>
                 </TableRow>

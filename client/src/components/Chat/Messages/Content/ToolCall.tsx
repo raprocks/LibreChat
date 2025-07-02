@@ -106,7 +106,7 @@ export default function ToolCall({
     if (progress < 1 && authDomain.length > 0) {
       return (
         <div
-          className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full bg-transparent text-text-secondary"
+          className="text-text-secondary absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-full bg-transparent"
           style={{ opacity: 1, transform: 'none' }}
           data-projection-id="849"
         >
@@ -119,7 +119,7 @@ export default function ToolCall({
       return (
         <InProgressCall progress={progress} isSubmitting={isSubmitting} error={error}>
           <div
-            className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded-full bg-transparent text-white"
+            className="absolute top-0 left-0 flex h-full w-full items-center justify-center rounded-full bg-transparent text-white"
             style={{ opacity: 1, transform: 'none' }}
             data-projection-id="849"
           >
@@ -175,9 +175,9 @@ export default function ToolCall({
         </div>
         {auth != null && auth && progress < 1 && !cancelled && (
           <div className="flex w-full flex-col gap-2.5">
-            <div className="mb-1 mt-2">
+            <div className="mt-2 mb-1">
               <a
-                className="inline-flex items-center justify-center gap-2 rounded-3xl bg-surface-tertiary px-4 py-2 text-sm font-medium hover:bg-surface-hover"
+                className="bg-surface-tertiary hover:bg-surface-hover inline-flex items-center justify-center gap-2 rounded-3xl px-4 py-2 text-sm font-medium"
                 href={auth}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -185,7 +185,7 @@ export default function ToolCall({
                 {localize('com_ui_sign_in_to_domain', { 0: authDomain })}
               </a>
             </div>
-            <p className="flex items-center text-xs text-text-secondary">
+            <p className="text-text-secondary flex items-center text-xs">
               <TriangleAlert className="mr-1.5 inline-block h-4 w-4" />
               {localize('com_assistants_allow_sites_you_trust')}
             </p>

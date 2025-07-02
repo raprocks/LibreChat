@@ -30,7 +30,7 @@ function AccountSettings() {
       <Select.Select
         aria-label={localize('com_nav_account_settings')}
         data-testid="nav-user"
-        className="mt-text-sm flex h-auto w-full items-center gap-2 rounded-xl p-2 text-sm transition-all duration-200 ease-in-out hover:bg-surface-hover"
+        className="mt-text-sm hover:bg-surface-hover flex h-auto w-full items-center gap-2 rounded-xl p-2 text-sm transition-all duration-200 ease-in-out"
       >
         <div className="-ml-0.9 -mt-0.8 h-8 w-8 flex-shrink-0">
           <div className="relative flex">
@@ -42,7 +42,7 @@ function AccountSettings() {
                   height: '32px',
                   boxShadow: 'rgba(240, 246, 252, 0.1) 0px 0px 0px 1px',
                 }}
-                className="relative flex items-center justify-center rounded-full p-1 text-text-primary"
+                className="text-text-primary relative flex items-center justify-center rounded-full p-1"
                 aria-hidden="true"
               >
                 <UserIcon />
@@ -57,7 +57,7 @@ function AccountSettings() {
           </div>
         </div>
         <div
-          className="mt-2 grow overflow-hidden text-ellipsis whitespace-nowrap text-left text-text-primary"
+          className="text-text-primary mt-2 grow overflow-hidden text-left text-ellipsis whitespace-nowrap"
           style={{ marginTop: '0', marginLeft: '0' }}
         >
           {user?.name ?? user?.username ?? localize('com_nav_user')}
@@ -71,20 +71,20 @@ function AccountSettings() {
           translate: '0px',
         }}
       >
-        <div className="text-token-text-secondary ml-3 mr-2 py-2 text-sm" role="note">
+        <div className="text-token-text-secondary mr-2 ml-3 py-2 text-sm" role="note">
           {user?.email ?? localize('com_nav_user')}
         </div>
         <DropdownMenuSeparator />
         {startupConfig?.balance?.enabled === true &&
           balanceQuery.data != null &&
           !isNaN(parseFloat(balanceQuery.data)) && (
-          <>
-            <div className="text-token-text-secondary ml-3 mr-2 py-2 text-sm" role="note">
-              {localize('com_nav_balance')}: {parseFloat(balanceQuery.data).toFixed(2)}
-            </div>
-            <DropdownMenuSeparator />
-          </>
-        )}
+            <>
+              <div className="text-token-text-secondary mr-2 ml-3 py-2 text-sm" role="note">
+                {localize('com_nav_balance')}: {parseFloat(balanceQuery.data).toFixed(2)}
+              </div>
+              <DropdownMenuSeparator />
+            </>
+          )}
         <Select.SelectItem
           value=""
           onClick={() => setShowFiles(true)}

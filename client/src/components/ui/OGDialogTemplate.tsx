@@ -62,7 +62,7 @@ const OGDialogTemplate = forwardRef((props: DialogTemplateProps, ref: Ref<HTMLDi
       overlayClassName={overlayClassName}
       showCloseButton={showCloseButton}
       ref={ref}
-      className={cn('w-11/12 border-none bg-background text-foreground', className ?? '')}
+      className={cn('bg-background text-foreground w-11/12 border-none', className ?? '')}
       onClick={(e) => e.stopPropagation()}
     >
       <OGDialogHeader className={cn(headerClassName ?? '')}>
@@ -85,7 +85,7 @@ const OGDialogTemplate = forwardRef((props: DialogTemplateProps, ref: Ref<HTMLDi
         <div className="flex h-auto gap-3 max-sm:w-full max-sm:flex-col sm:flex-row">
           {buttons != null ? buttons : null}
           {showCancelButton && (
-            <OGDialogClose className="btn btn-neutral border-token-border-light relative justify-center rounded-lg text-sm ring-offset-2 focus:ring-2 focus:ring-black dark:ring-offset-0 max-sm:order-last max-sm:w-full sm:order-first">
+            <OGDialogClose className="btn btn-neutral border-token-border-light relative justify-center rounded-lg text-sm ring-offset-2 focus:ring-2 focus:ring-black max-sm:order-last max-sm:w-full sm:order-first dark:ring-offset-0">
               {Cancel}
             </OGDialogClose>
           )}

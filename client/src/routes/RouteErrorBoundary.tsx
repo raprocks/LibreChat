@@ -125,17 +125,17 @@ export default function RouteErrorBoundary() {
   return (
     <div
       role="alert"
-      className="flex min-h-screen flex-col items-center justify-center bg-surface-primary bg-gradient-to-br"
+      className="bg-surface-primary flex min-h-screen flex-col items-center justify-center bg-gradient-to-br"
     >
-      <div className="bg-surface-primary/60 mx-4 w-11/12 max-w-4xl rounded-2xl border border-border-light p-8 shadow-2xl backdrop-blur-xl">
-        <h2 className="mb-6 text-center text-3xl font-medium tracking-tight text-text-primary">
+      <div className="bg-surface-primary/60 border-border-light mx-4 w-11/12 max-w-4xl rounded-2xl border p-8 shadow-2xl backdrop-blur-xl">
+        <h2 className="text-text-primary mb-6 text-center text-3xl font-medium tracking-tight">
           Oops! Something Unexpected Occurred
         </h2>
 
         {/* Error Message */}
         <div className="mb-4 rounded-xl border border-red-500/20 bg-red-500/5 p-4 text-sm text-gray-600 dark:text-gray-200">
           <h3 className="mb-2 font-medium">Error Message:</h3>
-          <pre className="whitespace-pre-wrap text-sm font-light leading-relaxed text-text-primary">
+          <pre className="text-text-primary text-sm leading-relaxed font-light whitespace-pre-wrap">
             {errorDetails.message}
           </pre>
         </div>
@@ -143,7 +143,7 @@ export default function RouteErrorBoundary() {
         {/* Status Information */}
         {(typeof errorDetails.status === 'number' ||
           typeof errorDetails.statusText === 'string') && (
-          <div className="mb-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4 text-sm text-text-primary">
+          <div className="text-text-primary mb-4 rounded-xl border border-yellow-500/20 bg-yellow-500/5 p-4 text-sm">
             <h3 className="mb-2 font-medium">Status:</h3>
             <p className="text-text-primary">
               {typeof errorDetails.status === 'number' && `${errorDetails.status} `}
@@ -154,8 +154,8 @@ export default function RouteErrorBoundary() {
 
         {/* Stack Trace - Collapsible */}
         {errorDetails.stack != null && errorDetails.stack.trim() !== '' && (
-          <details className="group mb-4 rounded-xl border border-border-light p-4">
-            <summary className="mb-2 flex cursor-pointer items-center justify-between text-sm font-medium text-text-primary">
+          <details className="group border-border-light mb-4 rounded-xl border p-4">
+            <summary className="text-text-primary mb-2 flex cursor-pointer items-center justify-between text-sm font-medium">
               <span>Stack Trace</span>
               <div className="flex items-center">
                 <Button
@@ -171,10 +171,10 @@ export default function RouteErrorBoundary() {
             <div className="overflow-x-auto rounded-lg bg-black/5 p-4 dark:bg-white/5">
               {formatStackTrace(errorDetails.stack).map(({ number, content }) => (
                 <div key={number} className="flex">
-                  <span className="select-none pr-4 font-mono text-xs text-text-secondary">
+                  <span className="text-text-secondary pr-4 font-mono text-xs select-none">
                     {String(number).padStart(3, '0')}
                   </span>
-                  <pre className="flex-1 font-mono text-xs leading-relaxed text-text-primary">
+                  <pre className="text-text-primary flex-1 font-mono text-xs leading-relaxed">
                     {content}
                   </pre>
                 </div>
@@ -185,20 +185,20 @@ export default function RouteErrorBoundary() {
 
         {/* Additional Error Data */}
         {errorDetails.data != null && (
-          <details className="group mb-4 rounded-xl border border-border-light p-4">
-            <summary className="mb-2 flex cursor-pointer items-center justify-between text-sm font-medium text-text-primary">
+          <details className="group border-border-light mb-4 rounded-xl border p-4">
+            <summary className="text-text-primary mb-2 flex cursor-pointer items-center justify-between text-sm font-medium">
               <span>Additional Details</span>
               <span className="transition-transform group-open:rotate-90">{'>'}</span>
             </summary>
-            <pre className="whitespace-pre-wrap text-xs font-light leading-relaxed text-text-primary">
+            <pre className="text-text-primary text-xs leading-relaxed font-light whitespace-pre-wrap">
               {JSON.stringify(errorDetails.data, null, 2)}
             </pre>
           </details>
         )}
 
         <div className="mt-6 flex flex-col gap-4">
-          <p className="text-sm font-light text-text-secondary">Please try one of the following:</p>
-          <ul className="list-inside list-disc text-sm text-text-secondary">
+          <p className="text-text-secondary text-sm font-light">Please try one of the following:</p>
+          <ul className="text-text-secondary list-inside list-disc text-sm">
             <li>Refresh the page</li>
             <li>Clear your browser cache</li>
             <li>Check your internet connection</li>

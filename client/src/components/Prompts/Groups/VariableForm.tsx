@@ -140,7 +140,7 @@ export default function VariableForm({
   return (
     <div className="mx-auto p-1 md:container">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="mb-6 max-h-screen max-w-[90vw] overflow-auto rounded-md bg-surface-tertiary p-4 text-text-secondary dark:bg-surface-primary sm:max-w-full md:max-h-96">
+        <div className="bg-surface-tertiary text-text-secondary dark:bg-surface-primary mb-6 max-h-screen max-w-[90vw] overflow-auto rounded-md p-4 sm:max-w-full md:max-h-96">
           <ReactMarkdown
             /** @ts-ignore */
             remarkPlugins={[supersub, remarkGfm, [remarkMath, { singleDollarTextMath: true }]]}
@@ -152,7 +152,7 @@ export default function VariableForm({
             ]}
             /** @ts-ignore */
             components={{ code: codeNoExecution, p: PromptVariableGfm }}
-            className="markdown prose dark:prose-invert light my-1 max-h-[50vh] max-w-full break-words dark:text-text-secondary"
+            className="markdown prose dark:prose-invert light dark:text-text-secondary my-1 max-h-[50vh] max-w-full break-words"
           >
             {generateHighlightedMarkdown()}
           </ReactMarkdown>
@@ -171,7 +171,7 @@ export default function VariableForm({
                         placeholder={localize('com_ui_enter_var', { 0: field.config.variable })}
                         className={cn(
                           defaultTextProps,
-                          'rounded px-3 py-2 focus:bg-surface-tertiary',
+                          'focus:bg-surface-tertiary rounded px-3 py-2',
                         )}
                         value={value}
                         onChange={onChange}
@@ -189,7 +189,7 @@ export default function VariableForm({
                       id={`fields.${index}.value`}
                       className={cn(
                         defaultTextProps,
-                        'rounded px-3 py-2 focus:bg-surface-tertiary',
+                        'focus:bg-surface-tertiary rounded px-3 py-2',
                       )}
                       placeholder={localize('com_ui_enter_var', { 0: field.config.variable })}
                       maxRows={8}

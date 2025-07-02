@@ -23,24 +23,24 @@ const TagPrimitiveRoot = React.forwardRef<HTMLDivElement, TagProps>(
         className,
       )}
     >
-      <div className={cn('ml-1 whitespace-pre-wrap px-2 py-1', labelClassName)}>
+      <div className={cn('ml-1 px-2 py-1 whitespace-pre-wrap', labelClassName)}>
         {LabelNode ? <>{LabelNode} </> : null}
         {label}
       </div>
       {CancelButton
         ? CancelButton
         : onRemove && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onRemove(e);
-            }}
-            className="rounded-full bg-green-600/50"
-            aria-label={`Remove ${label}`}
-          >
-            <X className="m-[1.5px] p-1" />
-          </button>
-        )}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onRemove(e);
+              }}
+              className="rounded-full bg-green-600/50"
+              aria-label={`Remove ${label}`}
+            >
+              <X className="m-[1.5px] p-1" />
+            </button>
+          )}
     </div>
   ),
 );

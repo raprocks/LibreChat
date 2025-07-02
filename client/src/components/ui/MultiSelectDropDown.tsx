@@ -83,7 +83,7 @@ function MultiSelectDropDown({
             <>
               <ListboxButton
                 className={cn(
-                  'relative flex w-full cursor-default flex-col rounded-md border border-black/10 bg-white py-2 pl-3 pr-10 text-left focus:outline-none focus:ring-0 focus:ring-offset-0 dark:border-gray-600 dark:border-white/20 dark:bg-gray-800 sm:text-sm',
+                  'relative flex w-full cursor-default flex-col rounded-md border border-black/10 bg-white py-2 pr-10 pl-3 text-left focus:ring-0 focus:ring-offset-0 focus:outline-none sm:text-sm dark:border-gray-600 dark:border-white/20 dark:bg-gray-800',
                   className ?? '',
                 )}
                 id={excludeIds[0]}
@@ -127,7 +127,7 @@ function MultiSelectDropDown({
                             ) : (
                               <Wrench className="h-full w-full rounded-sm bg-white" />
                             )}
-                            <div className="absolute inset-0 rounded-sm ring-1 ring-inset ring-black/10" />
+                            <div className="absolute inset-0 rounded-sm ring-1 ring-black/10 ring-inset" />
                           </div>
                         ))}
                       </div>
@@ -142,7 +142,7 @@ function MultiSelectDropDown({
                     viewBox="0 0 24 24"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-4 w-4  text-gray-400"
+                    className="h-4 w-4 text-gray-400"
                     height="1em"
                     width="1em"
                     xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ function MultiSelectDropDown({
                 <ListboxOptions
                   ref={menuRef}
                   className={cn(
-                    'absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded bg-white text-base text-xs ring-1 ring-black/10 focus:outline-none dark:bg-gray-800 dark:ring-white/20 dark:last:border-0 md:w-[100%]',
+                    'absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded bg-white text-base text-xs ring-1 ring-black/10 focus:outline-none md:w-[100%] dark:bg-gray-800 dark:ring-white/20 dark:last:border-0',
                     optionsClassName,
                   )}
                 >
@@ -177,7 +177,7 @@ function MultiSelectDropDown({
                       <ListboxOption
                         key={i}
                         value={option[optionValueKey]}
-                        className="group relative flex h-[42px] cursor-pointer select-none items-center overflow-hidden border-b border-black/10 pl-3 pr-9 text-gray-800 last:border-0 hover:bg-gray-20 dark:border-white/20 dark:text-white dark:hover:bg-gray-700"
+                        className="group hover:bg-gray-20 relative flex h-[42px] cursor-pointer items-center overflow-hidden border-b border-black/10 pr-9 pl-3 text-gray-800 select-none last:border-0 dark:border-white/20 dark:text-white dark:hover:bg-gray-700"
                       >
                         <span className="flex items-center gap-1.5 truncate">
                           {!option.isButton && (
@@ -192,7 +192,7 @@ function MultiSelectDropDown({
                                 ) : (
                                   <Wrench className="h-full w-full rounded-sm bg-white" />
                                 )}
-                                <div className="absolute inset-0 rounded-sm ring-1 ring-inset ring-black/10"></div>
+                                <div className="absolute inset-0 rounded-sm ring-1 ring-black/10 ring-inset"></div>
                               </div>
                             </span>
                           )}

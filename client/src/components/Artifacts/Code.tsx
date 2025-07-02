@@ -109,7 +109,7 @@ export const CopyCodeButton: React.FC<{ content: string }> = ({ content }) => {
 
   return (
     <button
-      className="mr-2 text-text-secondary"
+      className="text-text-secondary mr-2"
       onClick={handleCopy}
       aria-label={isCopied ? localize('com_ui_copied') : localize('com_ui_copy_code')}
     >

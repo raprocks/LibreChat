@@ -34,7 +34,7 @@ export default function PromptsView() {
   }
 
   return (
-    <div className="flex h-screen w-full flex-col bg-surface-primary p-0 lg:p-2">
+    <div className="bg-surface-primary flex h-screen w-full flex-col p-0 lg:p-2">
       <DashBreadcrumb />
       <div className="flex w-full flex-grow flex-row divide-x overflow-hidden dark:divide-gray-600">
         <GroupSidePanel isDetailView={isDetailView} {...groupsNav}>

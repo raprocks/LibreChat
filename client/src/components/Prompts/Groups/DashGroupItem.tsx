@@ -74,7 +74,7 @@ function DashGroupItemComponent({ group, instanceProjectId }: DashGroupItemProps
   return (
     <div
       className={cn(
-        'mx-2 my-2 flex cursor-pointer rounded-lg border border-border-light bg-surface-primary p-3 shadow-sm transition-all duration-300 ease-in-out hover:bg-surface-secondary',
+        'border-border-light bg-surface-primary hover:bg-surface-secondary mx-2 my-2 flex cursor-pointer rounded-lg border p-3 shadow-sm transition-all duration-300 ease-in-out',
         params.promptId === group._id && 'bg-surface-hover',
       )}
       onClick={handleContainerClick}
@@ -87,7 +87,7 @@ function DashGroupItemComponent({ group, instanceProjectId }: DashGroupItemProps
         <div className="flex items-center gap-2 truncate pr-2">
           <CategoryIcon category={group.category ?? ''} className="icon-lg" aria-hidden="true" />
 
-          <Label className="text-md cursor-pointer truncate font-semibold text-text-primary">
+          <Label className="text-md text-text-primary cursor-pointer truncate font-semibold">
             {group.name}
           </Label>
         </div>
@@ -106,7 +106,7 @@ function DashGroupItemComponent({ group, instanceProjectId }: DashGroupItemProps
                   <Button
                     variant="ghost"
                     onClick={(e) => e.stopPropagation()}
-                    className="h-8 w-8 p-0 hover:bg-surface-hover"
+                    className="hover:bg-surface-hover h-8 w-8 p-0"
                     aria-label={localize('com_ui_rename_prompt') + ' ' + group.name}
                   >
                     <Pen className="icon-sm text-text-primary" aria-hidden="true" />
@@ -142,7 +142,7 @@ function DashGroupItemComponent({ group, instanceProjectId }: DashGroupItemProps
                 <OGDialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="h-8 w-8 p-0 hover:bg-surface-hover"
+                    className="hover:bg-surface-hover h-8 w-8 p-0"
                     onClick={(e) => e.stopPropagation()}
                     aria-label={localize('com_ui_delete_prompt') + ' ' + group.name}
                   >

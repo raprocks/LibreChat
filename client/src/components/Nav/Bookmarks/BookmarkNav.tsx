@@ -38,8 +38,8 @@ const BookmarkNav: FC<BookmarkNavProps> = ({ tags, setTags, isSmallScreen }: Boo
                 aria-label={localize('com_ui_bookmarks')}
                 className={cn(
                   'flex items-center justify-center',
-                  'size-10 border-none text-text-primary hover:bg-accent hover:text-accent-foreground',
-                  'rounded-full border-none p-2 hover:bg-surface-hover md:rounded-xl',
+                  'text-text-primary hover:bg-accent hover:text-accent-foreground size-10 border-none',
+                  'hover:bg-surface-hover rounded-full border-none p-2 md:rounded-xl',
                   open ? 'bg-surface-hover' : '',
                 )}
                 data-testid="bookmark-menu"
@@ -61,7 +61,7 @@ const BookmarkNav: FC<BookmarkNavProps> = ({ tags, setTags, isSmallScreen }: Boo
           />
           <MenuItems
             anchor="bottom"
-            className="absolute left-0 top-full z-[100] mt-1 w-60 translate-y-0 overflow-hidden rounded-lg bg-surface-secondary p-1.5 shadow-lg outline-none"
+            className="bg-surface-secondary absolute top-full left-0 z-[100] mt-1 w-60 translate-y-0 overflow-hidden rounded-lg p-1.5 shadow-lg outline-none"
           >
             {data && conversation && (
               <BookmarkContext.Provider value={{ bookmarks: data.filter((tag) => tag.count > 0) }}>

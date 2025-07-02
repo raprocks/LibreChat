@@ -91,7 +91,7 @@ const SidePanelGroup = ({
       <ResizablePanelGroup
         direction="horizontal"
         onLayout={(sizes) => throttledSaveLayout(sizes)}
-        className="transition-width relative h-full w-full flex-1 overflow-auto bg-presentation"
+        className="transition-width bg-presentation relative h-full w-full flex-1 overflow-auto"
       >
         <ResizablePanel
           defaultSize={currentLayout[0]}
@@ -103,7 +103,7 @@ const SidePanelGroup = ({
         </ResizablePanel>
         {artifacts != null && (
           <>
-            <ResizableHandleAlt withHandle className="ml-3 bg-border-medium text-text-primary" />
+            <ResizableHandleAlt withHandle className="bg-border-medium text-text-primary ml-3" />
             <ResizablePanel
               defaultSize={currentLayout[1]}
               minSize={minSizeMain}

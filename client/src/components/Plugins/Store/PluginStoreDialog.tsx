@@ -135,13 +135,13 @@ function PluginStoreDialog({ isOpen, setIsOpen }: TPluginStoreDialogProps) {
       {/* Full-screen container to center the panel */}
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <DialogPanel
-          className="relative w-full transform overflow-hidden overflow-y-auto rounded-lg bg-white text-left shadow-xl transition-all dark:bg-gray-700 max-sm:h-full sm:mx-7 sm:my-8 sm:max-w-2xl lg:max-w-5xl xl:max-w-7xl"
+          className="relative w-full transform overflow-hidden overflow-y-auto rounded-lg bg-white text-left shadow-xl transition-all max-sm:h-full sm:mx-7 sm:my-8 sm:max-w-2xl lg:max-w-5xl xl:max-w-7xl dark:bg-gray-700"
           style={{ minHeight: '610px' }}
         >
           <div className="flex items-center justify-between border-b-[1px] border-black/10 p-6 pb-4 dark:border-white/10">
             <div className="flex items-center">
               <div className="text-center sm:text-left">
-                <DialogTitle className="text-lg font-medium leading-6 text-gray-800 dark:text-gray-200">
+                <DialogTitle className="text-lg leading-6 font-medium text-gray-800 dark:text-gray-200">
                   {localize('com_nav_plugin_store')}
                 </DialogTitle>
               </div>
@@ -187,8 +187,7 @@ function PluginStoreDialog({ isOpen, setIsOpen }: TPluginStoreDialogProps) {
                     value={searchValue}
                     onChange={handleSearch}
                     placeholder={localize('com_nav_plugin_search')}
-                    className="
-                    text-token-text-primary flex rounded-md border border-border-heavy bg-surface-tertiary py-2 pl-10 pr-2"
+                    className="text-token-text-primary border-border-heavy bg-surface-tertiary flex rounded-md border py-2 pr-2 pl-10"
                   />
                 </div>
               </div>

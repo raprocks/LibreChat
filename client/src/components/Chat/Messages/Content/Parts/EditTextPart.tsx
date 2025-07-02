@@ -117,9 +117,9 @@ const EditTextPart = ({
       messages.map((msg) =>
         msg.messageId === messageId
           ? {
-            ...msg,
-            content: updatedContent,
-          }
+              ...msg,
+              content: updatedContent,
+            }
           : msg,
       ),
     );
@@ -146,7 +146,7 @@ const EditTextPart = ({
 
   return (
     <Container message={message}>
-      <div className="bg-token-main-surface-primary relative flex w-full flex-grow flex-col overflow-hidden rounded-2xl border border-border-medium text-text-primary [&:has(textarea:focus)]:border-border-heavy [&:has(textarea:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)]">
+      <div className="bg-token-main-surface-primary border-border-medium text-text-primary [&:has(textarea:focus)]:border-border-heavy relative flex w-full flex-grow flex-col overflow-hidden rounded-2xl border [&:has(textarea:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)]">
         <TextareaAutosize
           {...registerProps}
           ref={(e) => {
@@ -156,7 +156,7 @@ const EditTextPart = ({
           onKeyDown={handleKeyDown}
           data-testid="message-text-editor"
           className={cn(
-            'markdown prose dark:prose-invert light whitespace-pre-wrap break-words pl-3 md:pl-4',
+            'markdown prose dark:prose-invert light pl-3 break-words whitespace-pre-wrap md:pl-4',
             'm-0 w-full resize-none border-0 bg-transparent py-[10px]',
             'placeholder-text-secondary focus:ring-0 focus-visible:ring-0 md:py-3.5',
             isRTL ? 'text-right' : 'text-left',

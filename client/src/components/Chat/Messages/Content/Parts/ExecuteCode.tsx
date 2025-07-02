@@ -95,7 +95,7 @@ export default function ExecuteCode({
         />
       </div>
       {showCode && (
-        <div className="code-analyze-block mb-3 mt-0.5 overflow-hidden rounded-xl bg-black">
+        <div className="code-analyze-block mt-0.5 mb-3 overflow-hidden rounded-xl bg-black">
           <MarkdownLite
             content={code ? `\`\`\`${lang}\n${code}\n\`\`\`` : ''}
             codeExecution={false}

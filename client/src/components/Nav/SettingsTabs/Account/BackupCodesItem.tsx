@@ -117,14 +117,14 @@ const BackupCodesItem: React.FC = () => {
                           });
                           document.dispatchEvent(announcement);
                         }}
-                        className={`flex flex-col rounded-xl border p-4 backdrop-blur-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                        className={`focus-visible:ring-primary flex flex-col rounded-xl border p-4 backdrop-blur-sm transition-colors focus-visible:ring-2 focus-visible:outline-none ${
                           isUsed
                             ? 'border-red-200 bg-red-50/80 dark:border-red-800 dark:bg-red-900/20'
                             : 'border-green-200 bg-green-50/80 dark:border-green-800 dark:bg-green-900/20'
                         } `}
                       >
                         <div className="flex items-center justify-between" aria-hidden="true">
-                          <span className="text-sm font-medium text-text-secondary">
+                          <span className="text-text-secondary text-sm font-medium">
                             #{index + 1}
                           </span>
                           <TooltipAnchor
@@ -171,8 +171,8 @@ const BackupCodesItem: React.FC = () => {
               </>
             ) : (
               <div className="flex flex-col items-center gap-4 p-6 text-center">
-                <ShieldX className="h-12 w-12 text-text-primary" />
-                <p className="text-lg text-text-secondary">{localize('com_ui_no_backup_codes')}</p>
+                <ShieldX className="text-text-primary h-12 w-12" />
+                <p className="text-text-secondary text-lg">{localize('com_ui_no_backup_codes')}</p>
                 <Button
                   onClick={handleRegenerate}
                   disabled={isLoading}

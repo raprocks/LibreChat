@@ -44,7 +44,9 @@ const BookmarkTableRow: React.FC<BookmarkTableRowProps> = ({ row, moveRow, posit
     accept: 'bookmark',
     drop: handleDrop,
     hover(item: DragItem) {
-      if (!ref.current || item.index === position) {return;}
+      if (!ref.current || item.index === position) {
+        return;
+      }
       moveRow(item.index, position);
       item.index = position;
     },
@@ -63,7 +65,7 @@ const BookmarkTableRow: React.FC<BookmarkTableRowProps> = ({ row, moveRow, posit
   return (
     <TableRow
       ref={ref}
-      className="cursor-move hover:bg-surface-secondary"
+      className="hover:bg-surface-secondary cursor-move"
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
       <TableCell className="w-[70%] px-4 py-4">

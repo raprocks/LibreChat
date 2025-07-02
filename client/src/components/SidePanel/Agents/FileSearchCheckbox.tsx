@@ -51,13 +51,13 @@ function FileSearchCheckbox() {
               {localize('com_agents_enable_file_search')}
             </label>
             <HoverCardTrigger>
-              <CircleHelpIcon className="h-4 w-4 text-text-tertiary" />
+              <CircleHelpIcon className="text-text-tertiary h-4 w-4" />
             </HoverCardTrigger>
           </button>
           <HoverCardPortal>
             <HoverCardContent side={ESide.Top} className="w-80">
               <div className="space-y-2">
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary text-sm">
                   {localize('com_agents_file_search_info')}
                 </p>
               </div>

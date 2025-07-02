@@ -93,9 +93,9 @@ const ImagePreview = ({
 
   const style: styleProps = imageUrl
     ? {
-      ...baseStyle,
-      backgroundImage: `url(${imageUrl})`,
-    }
+        ...baseStyle,
+        backgroundImage: `url(${imageUrl})`,
+      }
     : baseStyle;
 
   if (typeof style.backgroundImage !== 'string' || style.backgroundImage.length === 0) {
@@ -167,7 +167,7 @@ const ImagePreview = ({
           <img
             src={imageUrl}
             alt={alt}
-            className="max-w-screen h-full max-h-screen w-full object-contain"
+            className="h-full max-h-screen w-full max-w-screen object-contain"
           />
         </OGDialogContent>
       </OGDialog>

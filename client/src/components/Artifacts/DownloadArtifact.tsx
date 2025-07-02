@@ -42,7 +42,7 @@ const DownloadArtifact = ({
 
   return (
     <button
-      className={`mr-2 text-text-secondary ${className}`}
+      className={`text-text-secondary mr-2 ${className}`}
       onClick={handleDownload}
       aria-label={localize('com_ui_download_artifact')}
     >

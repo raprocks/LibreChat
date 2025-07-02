@@ -134,7 +134,7 @@ const BookmarkForm = ({
             id="bookmark-description"
             disabled={false}
             className={cn(
-              'flex h-10 max-h-[250px] min-h-[100px] w-full resize-none rounded-lg border border-input bg-transparent px-3 py-2 text-sm ring-offset-background focus-visible:outline-none',
+              'border-input ring-offset-background flex h-10 max-h-[250px] min-h-[100px] w-full resize-none rounded-lg border bg-transparent px-3 py-2 text-sm focus-visible:outline-none',
             )}
           />
         </div>
@@ -156,14 +156,14 @@ const BookmarkForm = ({
             <button
               type="button"
               aria-label={localize('com_ui_bookmarks_add_to_conversation')}
-              className="form-check-label w-full cursor-pointer text-text-primary"
+              className="form-check-label text-text-primary w-full cursor-pointer"
               onClick={() =>
                 setValue('addToConversation', !(getValues('addToConversation') ?? false), {
                   shouldDirty: true,
                 })
               }
             >
-              <div className="flex select-none items-center">
+              <div className="flex items-center select-none">
                 {localize('com_ui_bookmarks_add_to_conversation')}
               </div>
             </button>

@@ -53,7 +53,7 @@ const ArtifactButton = ({ artifact }: { artifact: Artifact | null }) => {
   const fileType = getFileType('artifact');
 
   return (
-    <div className="group relative my-4 rounded-xl text-sm text-text-primary">
+    <div className="group text-text-primary relative my-4 rounded-xl text-sm">
       <button
         type="button"
         onClick={() => {
@@ -69,14 +69,14 @@ const ArtifactButton = ({ artifact }: { artifact: Artifact | null }) => {
             setCurrentArtifactId(artifact.id);
           }, 15);
         }}
-        className="relative overflow-hidden rounded-xl border border-border-medium transition-all duration-300 hover:border-border-xheavy hover:shadow-lg"
+        className="border-border-medium hover:border-border-xheavy relative overflow-hidden rounded-xl border transition-all duration-300 hover:shadow-lg"
       >
-        <div className="w-fit bg-surface-tertiary p-2">
+        <div className="bg-surface-tertiary w-fit p-2">
           <div className="flex flex-row items-center gap-2">
             <FilePreview fileType={fileType} className="relative" />
             <div className="overflow-hidden text-left">
               <div className="truncate font-medium">{artifact.title}</div>
-              <div className="truncate text-text-secondary">
+              <div className="text-text-secondary truncate">
                 {localize('com_ui_artifact_click')}
               </div>
             </div>

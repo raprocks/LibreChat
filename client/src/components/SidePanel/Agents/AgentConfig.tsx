@@ -200,7 +200,7 @@ export default function AgentConfig({
             name="id"
             control={control}
             render={({ field }) => (
-              <p className="h-3 text-xs italic text-text-secondary" aria-live="polite">
+              <p className="text-text-secondary h-3 text-xs italic" aria-live="polite">
                 {field.value}
               </p>
             )}

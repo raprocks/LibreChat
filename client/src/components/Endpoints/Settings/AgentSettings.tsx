@@ -91,7 +91,7 @@ export default function Settings({ conversation, setOption, models, readonly }: 
             <HoverCardTrigger className="flex w-[100px] flex-col items-center space-y-4 text-center">
               <label
                 htmlFor="functions-agent"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
+                className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
               >
                 <small>{localize('com_endpoint_plug_use_functions')}</small>
               </label>
@@ -100,7 +100,7 @@ export default function Settings({ conversation, setOption, models, readonly }: 
                 checked={agent === 'functions'}
                 onCheckedChange={onCheckedChangeAgent}
                 disabled={readonly}
-                className="ml-4 mt-2"
+                className="mt-2 ml-4"
               />
             </HoverCardTrigger>
             <OptionHover endpoint={conversation.endpoint ?? ''} type="func" side={ESide.Bottom} />
@@ -109,7 +109,7 @@ export default function Settings({ conversation, setOption, models, readonly }: 
             <HoverCardTrigger className="ml-[-60px] flex w-[100px] flex-col items-center space-y-4 text-center">
               <label
                 htmlFor="skip-completion"
-                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
+                className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
               >
                 <small>{localize('com_endpoint_plug_skip_completion')}</small>
               </label>
@@ -118,7 +118,7 @@ export default function Settings({ conversation, setOption, models, readonly }: 
                 checked={skipCompletion === true}
                 onCheckedChange={onCheckedChangeSkip}
                 disabled={readonly}
-                className="ml-4 mt-2"
+                className="mt-2 ml-4"
               />
             </HoverCardTrigger>
             <OptionHover endpoint={conversation.endpoint ?? ''} type="skip" side={ESide.Bottom} />

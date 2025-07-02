@@ -109,7 +109,7 @@ export default function FileSearch({
         </div>
         {/* Disabled Message */}
         {agent_id ? null : (
-          <div className="text-xs text-text-secondary">
+          <div className="text-text-secondary text-xs">
             {localize('com_agents_file_search_disabled')}
           </div>
         )}

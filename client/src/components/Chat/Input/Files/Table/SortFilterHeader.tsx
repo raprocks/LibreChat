@@ -37,11 +37,11 @@ export function SortFilterHeader<TData, TValue>({
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
-            className="px-2 py-0 text-xs hover:bg-surface-hover data-[state=open]:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+            className="hover:bg-surface-hover data-[state=open]:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
           >
             <span>{title}</span>
             {column.getIsFiltered() ? (
-              <ListFilter className="icon-sm ml-2 text-muted-foreground/70" />
+              <ListFilter className="icon-sm text-muted-foreground/70 ml-2" />
             ) : (
               <ListFilter className="icon-sm ml-2 opacity-30" />
             )}
@@ -59,20 +59,20 @@ export function SortFilterHeader<TData, TValue>({
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start"
-          className="z-[1001] dark:border-gray-700 dark:bg-gray-850"
+          className="dark:bg-gray-850 z-[1001] dark:border-gray-700"
         >
           <DropdownMenuItem
             onClick={() => column.toggleSorting(false)}
-            className="cursor-pointer text-text-primary"
+            className="text-text-primary cursor-pointer"
           >
-            <ArrowUpIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+            <ArrowUpIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
             {localize('com_ui_ascending')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => column.toggleSorting(true)}
-            className="cursor-pointer text-text-primary"
+            className="text-text-primary cursor-pointer"
           >
-            <ArrowDownIcon className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+            <ArrowDownIcon className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
             {localize('com_ui_descending')}
           </DropdownMenuItem>
           <DropdownMenuSeparator className="dark:bg-gray-500" />
@@ -89,13 +89,13 @@ export function SortFilterHeader<TData, TValue>({
                 }
                 return (
                   <DropdownMenuItem
-                    className="cursor-pointer text-text-primary"
+                    className="text-text-primary cursor-pointer"
                     key={`${key}-${value}`}
                     onClick={() => {
                       column.setFilterValue(value);
                     }}
                   >
-                    <ListFilter className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+                    <ListFilter className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
                     {filterValue}
                   </DropdownMenuItem>
                 );
@@ -112,7 +112,7 @@ export function SortFilterHeader<TData, TValue>({
                 column.setFilterValue(undefined);
               }}
             >
-              <FilterX className="mr-2 h-3.5 w-3.5 text-muted-foreground/70" />
+              <FilterX className="text-muted-foreground/70 mr-2 h-3.5 w-3.5" />
               {localize('com_ui_show_all')}
             </DropdownMenuItem>
           )}

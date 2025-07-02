@@ -23,8 +23,8 @@ const LoadingSpinner = memo(() => {
 
   return (
     <div className="mx-auto mt-2 flex items-center justify-center gap-2">
-      <Spinner className="h-4 w-4 text-text-primary" />
-      <span className="animate-pulse text-text-primary">{localize('com_ui_loading')}</span>
+      <Spinner className="text-text-primary h-4 w-4" />
+      <span className="text-text-primary animate-pulse">{localize('com_ui_loading')}</span>
     </div>
   );
 });
@@ -32,7 +32,7 @@ const LoadingSpinner = memo(() => {
 const DateLabel: FC<{ groupName: string }> = memo(({ groupName }) => {
   const localize = useLocalize();
   return (
-    <div className="mt-2 pl-2 pt-1 text-text-secondary" style={{ fontSize: '0.7rem' }}>
+    <div className="text-text-secondary mt-2 pt-1 pl-2" style={{ fontSize: '0.7rem' }}>
       {localize(groupName as TranslationKeys) || groupName}
     </div>
   );
@@ -196,11 +196,11 @@ const Conversations: FC<ConversationsProps> = ({
   );
 
   return (
-    <div className="relative flex h-full flex-col pb-2 text-sm text-text-primary">
+    <div className="text-text-primary relative flex h-full flex-col pb-2 text-sm">
       {isSearchLoading ? (
         <div className="flex flex-1 items-center justify-center">
           <Spinner className="text-text-primary" />
-          <span className="ml-2 text-text-primary">Loading...</span>
+          <span className="text-text-primary ml-2">Loading...</span>
         </div>
       ) : (
         <div className="flex-1">

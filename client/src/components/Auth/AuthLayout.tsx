@@ -75,7 +75,7 @@ function AuthLayout({
       </div>
 
       <div className="flex flex-grow items-center justify-center">
-        <div className="w-authPageWidth overflow-hidden bg-white px-6 py-4 dark:bg-gray-900 sm:max-w-md sm:rounded-lg">
+        <div className="w-authPageWidth overflow-hidden bg-white px-6 py-4 sm:max-w-md sm:rounded-lg dark:bg-gray-900">
           {!hasStartupConfigError && !isFetching && (
             <h1
               className="mb-4 text-center text-3xl font-semibold text-black dark:text-white"
@@ -87,8 +87,8 @@ function AuthLayout({
           {children}
           {!pathname.includes('2fa') &&
             (pathname.includes('login') || pathname.includes('register')) && (
-            <SocialLoginRender startupConfig={startupConfig} />
-          )}
+              <SocialLoginRender startupConfig={startupConfig} />
+            )}
         </div>
       </div>
       <Footer startupConfig={startupConfig} />

@@ -42,7 +42,7 @@ function Examples({ readonly, examples, setExample, addExample, removeExample }:
                   placeholder="Set example input. Example is ignored if empty."
                   className={cn(
                     defaultTextProps,
-                    'flex max-h-[138px] min-h-[75px] w-full resize-none px-3 py-2 ',
+                    'flex max-h-[138px] min-h-[75px] w-full resize-none px-3 py-2',
                   )}
                 />
               </div>
@@ -67,7 +67,7 @@ function Examples({ readonly, examples, setExample, addExample, removeExample }:
                   placeholder={'Set example output. Example is ignored if empty.'}
                   className={cn(
                     defaultTextProps,
-                    'flex max-h-[300px] min-h-[75px] w-full resize-none px-3 py-2 ',
+                    'flex max-h-[300px] min-h-[75px] w-full resize-none px-3 py-2',
                   )}
                 />
               </div>
@@ -78,14 +78,14 @@ function Examples({ readonly, examples, setExample, addExample, removeExample }:
       <div className="flex justify-center">
         <Button
           type="button"
-          className="mr-2 mt-1 h-auto items-center justify-center bg-transparent px-3 py-2 text-xs font-medium font-normal text-black hover:bg-gray-100 hover:text-black focus:ring-0 focus:ring-offset-0 dark:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:outline-none dark:focus:ring-offset-0"
+          className="mt-1 mr-2 h-auto items-center justify-center bg-transparent px-3 py-2 text-xs font-medium font-normal text-black hover:bg-gray-100 hover:text-black focus:ring-0 focus:ring-offset-0 dark:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-offset-0 dark:focus:outline-none"
           onClick={removeExample}
         >
           <Minus className="w-[16px]" />
         </Button>
         <Button
           type="button"
-          className="mt-1 h-auto items-center justify-center bg-transparent px-3 py-2 text-xs font-medium font-normal text-black hover:bg-gray-100 hover:text-black focus:ring-0 focus:ring-offset-0 dark:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:outline-none dark:focus:ring-offset-0"
+          className="mt-1 h-auto items-center justify-center bg-transparent px-3 py-2 text-xs font-medium font-normal text-black hover:bg-gray-100 hover:text-black focus:ring-0 focus:ring-offset-0 dark:bg-transparent dark:text-white dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-offset-0 dark:focus:outline-none"
           onClick={addExample}
         >
           <Plus className="w-[16px]" />

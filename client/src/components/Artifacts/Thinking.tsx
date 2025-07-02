@@ -40,7 +40,7 @@ export const ThinkingButton = memo(
     label: string;
   }) => (
     <button type="button" onClick={onClick} className={BUTTON_STYLES.base}>
-      <Atom size={14} className="mr-1.5 text-text-secondary" />
+      <Atom size={14} className="text-text-secondary mr-1.5" />
       {label}
       <ChevronDown className={`${BUTTON_STYLES.icon} ${isExpanded ? 'rotate-180' : ''}`} />
     </button>

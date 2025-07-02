@@ -9,7 +9,7 @@ export default function DialogImage({ src = '', width = 1920, height = 1080 }) {
       >
         <Dialog.Close asChild>
           <button
-            className="absolute right-4 top-4 text-gray-50 transition hover:text-gray-200"
+            className="absolute top-4 right-4 text-gray-50 transition hover:text-gray-200"
             type="button"
           >
             <svg

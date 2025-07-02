@@ -41,22 +41,22 @@ export default function List({
         </div>
       )}
       <div className="flex-grow overflow-y-auto">
-        <div className="overflow-y-auto overflow-x-hidden">
+        <div className="overflow-x-hidden overflow-y-auto">
           {isLoading && isChatRoute && (
-            <Skeleton className="my-2 flex h-[84px] w-full rounded-2xl border-0 px-3 pb-4 pt-3" />
+            <Skeleton className="my-2 flex h-[84px] w-full rounded-2xl border-0 px-3 pt-3 pb-4" />
           )}
           {isLoading &&
             !isChatRoute &&
             Array.from({ length: 10 }).map((_, index: number) => (
-              <Skeleton key={index} className="w-100 mx-2 my-2 flex h-14 rounded-lg border-0 p-4" />
+              <Skeleton key={index} className="mx-2 my-2 flex h-14 w-100 rounded-lg border-0 p-4" />
             ))}
           {!isLoading && groups.length === 0 && isChatRoute && (
-            <div className="my-2 flex h-[84px] w-full items-center justify-center rounded-2xl border border-border-light bg-transparent px-3 pb-4 pt-3 text-text-primary">
+            <div className="border-border-light text-text-primary my-2 flex h-[84px] w-full items-center justify-center rounded-2xl border bg-transparent px-3 pt-3 pb-4">
               {localize('com_ui_nothing_found')}
             </div>
           )}
           {!isLoading && groups.length === 0 && !isChatRoute && (
-            <div className="my-12 flex w-full items-center justify-center text-lg font-semibold text-text-primary">
+            <div className="text-text-primary my-12 flex w-full items-center justify-center text-lg font-semibold">
               {localize('com_ui_nothing_found')}
             </div>
           )}

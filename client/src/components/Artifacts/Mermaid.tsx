@@ -167,7 +167,7 @@ const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ content }) => {
                 style={{ width: 'auto', height: 'auto', minWidth: '100%', minHeight: '100%' }}
               />
             </TransformComponent>
-            <div className="absolute bottom-2 right-2 flex space-x-2">
+            <div className="absolute right-2 bottom-2 flex space-x-2">
               <Button onClick={() => zoomIn(0.1)} variant="outline" size="icon">
                 <ZoomIn className="h-4 w-4" />
               </Button>

@@ -94,10 +94,10 @@ const MessageRender = memo(
       () =>
         showCardRender && !isLatestMessage
           ? () => {
-            logger.log(`Message Card click: Setting ${msg?.messageId} as latest message`);
-            logger.dir(msg);
-            setLatestMessage(msg!);
-          }
+              logger.log(`Message Card click: Setting ${msg?.messageId} as latest message`);
+              logger.dir(msg);
+              setLatestMessage(msg!);
+            }
           : undefined,
       [showCardRender, isLatestMessage, msg, setLatestMessage],
     );
@@ -142,7 +142,7 @@ const MessageRender = memo(
         tabIndex={showCardRender ? 0 : undefined}
       >
         {isLatestCard && (
-          <div className="absolute right-0 top-0 m-2 h-3 w-3 rounded-full bg-text-primary" />
+          <div className="bg-text-primary absolute top-0 right-0 m-2 h-3 w-3 rounded-full" />
         )}
 
         <div className="relative flex flex-shrink-0 flex-col items-center">
@@ -157,7 +157,7 @@ const MessageRender = memo(
             msg.isCreatedByUser ? 'user-turn' : 'agent-turn',
           )}
         >
-          <h2 className={cn('select-none font-semibold', fontSize)}>{messageLabel}</h2>
+          <h2 className={cn('font-semibold select-none', fontSize)}>{messageLabel}</h2>
 
           <div className="flex flex-col gap-1">
             <div className="flex max-w-full flex-grow flex-col gap-0">

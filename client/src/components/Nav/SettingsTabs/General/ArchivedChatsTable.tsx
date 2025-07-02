@@ -128,7 +128,7 @@ export default function ArchivedChatsTable({
           return (
             <Button
               variant="ghost"
-              className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+              className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
               onClick={() =>
                 handleSort('title', isSorted && sortDirection === 'asc' ? 'desc' : 'asc')
               }
@@ -175,7 +175,7 @@ export default function ArchivedChatsTable({
           return (
             <Button
               variant="ghost"
-              className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+              className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
               onClick={() =>
                 handleSort('createdAt', isSorted && sortDirection === 'asc' ? 'desc' : 'asc')
               }
@@ -213,7 +213,7 @@ export default function ArchivedChatsTable({
                 render={
                   <Button
                     variant="ghost"
-                    className="h-8 w-8 p-0 hover:bg-surface-hover"
+                    className="hover:bg-surface-hover h-8 w-8 p-0"
                     onClick={() =>
                       unarchiveMutation.mutate({
                         conversationId: conversation.conversationId,
@@ -236,7 +236,7 @@ export default function ArchivedChatsTable({
                 render={
                   <Button
                     variant="ghost"
-                    className="h-8 w-8 p-0 hover:bg-surface-hover"
+                    className="hover:bg-surface-hover h-8 w-8 p-0"
                     onClick={() => {
                       setDeleteConversation(row.original);
                       setIsDeleteOpen(true);

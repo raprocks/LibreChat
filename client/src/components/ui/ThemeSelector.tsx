@@ -31,7 +31,7 @@ const Theme = ({ theme, onChange }: { theme: string; onChange: (value: string) =
 
   return (
     <button
-      className="flex items-center gap-2 rounded-lg p-2 transition-colors hover:bg-surface-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      className="hover:bg-surface-hover flex items-center gap-2 rounded-lg p-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
       aria-label={label}
       aria-keyshortcuts="Ctrl+Shift+T"
       onClick={(e) => {
@@ -87,7 +87,7 @@ const ThemeSelector = ({ returnThemeOnly }: { returnThemeOnly?: boolean }) => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white pt-6 dark:bg-gray-900 sm:pt-0">
+    <div className="flex flex-col items-center justify-center bg-white pt-6 sm:pt-0 dark:bg-gray-900">
       <div className="absolute bottom-0 left-0 m-4">
         <Theme theme={theme} onChange={changeTheme} />
       </div>

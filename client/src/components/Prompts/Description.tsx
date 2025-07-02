@@ -41,8 +41,8 @@ const Description = ({
   }
 
   return (
-    <div className="rounded-xl border border-border-light shadow-md">
-      <h3 className="flex h-10 items-center gap-1 pl-4 text-sm text-text-secondary">
+    <div className="border-border-light rounded-xl border shadow-md">
+      <h3 className="text-text-secondary flex h-10 items-center gap-1 pl-4 text-sm">
         <Info className="icon-sm" aria-hidden="true" />
         <Input
           type="text"
@@ -54,7 +54,7 @@ const Description = ({
           className="border-none"
         />
         {!disabled && (
-          <span className="mr-4 w-10 text-xs text-text-secondary md:text-sm">{`${charCount}/${MAX_LENGTH}`}</span>
+          <span className="text-text-secondary mr-4 w-10 text-xs md:text-sm">{`${charCount}/${MAX_LENGTH}`}</span>
         )}
       </h3>
     </div>

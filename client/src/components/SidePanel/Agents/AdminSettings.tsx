@@ -148,7 +148,7 @@ const AdminSettings = () => {
           {localize('com_ui_admin_settings')}
         </Button>
       </OGDialogTrigger>
-      <OGDialogContent className="w-1/4 border-border-light bg-surface-primary text-text-primary">
+      <OGDialogContent className="border-border-light bg-surface-primary text-text-primary w-1/4">
         <OGDialogTitle>{`${localize('com_ui_admin_settings')} - ${localize(
           'com_ui_agents',
         )}`}</OGDialogTitle>
@@ -162,7 +162,7 @@ const AdminSettings = () => {
               isOpen={isRoleMenuOpen}
               setIsOpen={setIsRoleMenuOpen}
               trigger={
-                <Ariakit.MenuButton className="inline-flex w-1/4 items-center justify-center rounded-lg border border-border-light bg-transparent px-2 py-1 text-text-primary transition-all ease-in-out hover:bg-surface-tertiary">
+                <Ariakit.MenuButton className="border-border-light text-text-primary hover:bg-surface-tertiary inline-flex w-1/4 items-center justify-center rounded-lg border bg-transparent px-2 py-1 transition-all ease-in-out">
                   {selectedRole}
                 </Ariakit.MenuButton>
               }
@@ -185,7 +185,7 @@ const AdminSettings = () => {
                   />
                   {selectedRole === SystemRoles.ADMIN && agentPerm === Permissions.USE && (
                     <>
-                      <div className="mb-2 max-w-full whitespace-normal break-words text-sm text-red-600">
+                      <div className="mb-2 max-w-full text-sm break-words whitespace-normal text-red-600">
                         <span>{localize('com_ui_admin_access_warning')}</span>
                         {'\n'}
                         <a

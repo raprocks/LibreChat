@@ -225,7 +225,7 @@ const PromptForm = () => {
 
   const RightPanel = () => (
     <div
-      className="h-full w-full overflow-y-auto bg-surface-primary px-4"
+      className="bg-surface-primary h-full w-full overflow-y-auto px-4"
       style={{ maxHeight: 'calc(100vh - 100px)' }}
     >
       <div className="mb-2 flex flex-col lg:flex-row lg:items-center lg:justify-center lg:gap-x-2 xl:flex-row xl:space-y-0">
@@ -287,18 +287,18 @@ const PromptForm = () => {
       {editorMode === PromptsEditorMode.ADVANCED &&
         (isLoadingPrompts
           ? Array.from({ length: 6 }).map((_, index: number) => (
-            <div key={index} className="my-2">
-              <Skeleton className="h-[72px] w-full" />
-            </div>
-          ))
+              <div key={index} className="my-2">
+                <Skeleton className="h-[72px] w-full" />
+              </div>
+            ))
           : prompts.length > 0 && (
-            <PromptVersions
-              group={group}
-              prompts={prompts}
-              selectionIndex={selectionIndex}
-              setSelectionIndex={setSelectionIndex}
-            />
-          ))}
+              <PromptVersions
+                group={group}
+                prompts={prompts}
+                selectionIndex={selectionIndex}
+                setSelectionIndex={setSelectionIndex}
+              />
+            ))}
     </div>
   );
 
@@ -315,7 +315,7 @@ const PromptForm = () => {
           >
             <div className="flex h-full">
               <div className="flex-1 overflow-hidden px-4">
-                <div className="mb-4 flex items-center gap-2 text-text-primary">
+                <div className="text-text-primary mb-4 flex items-center gap-2">
                   {isLoadingGroup ? (
                     <Skeleton className="mb-1 flex h-10 w-32 font-bold sm:text-xl md:mb-0 md:h-12 md:text-2xl" />
                   ) : (
@@ -333,7 +333,7 @@ const PromptForm = () => {
                       <Button
                         type="button"
                         variant="ghost"
-                        className="h-10 w-10 border border-border-light p-0 lg:hidden"
+                        className="border-border-light h-10 w-10 border p-0 lg:hidden"
                         onClick={() => setShowSidePanel(true)}
                         aria-label={localize('com_endpoint_open_menu')}
                       >
@@ -364,7 +364,7 @@ const PromptForm = () => {
               </div>
 
               {editorMode === PromptsEditorMode.ADVANCED && (
-                <div className="hidden w-1/4 border-l border-border-light lg:block">
+                <div className="border-border-light hidden w-1/4 border-l lg:block">
                   <RightPanel />
                 </div>
               )}

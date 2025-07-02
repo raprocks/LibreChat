@@ -37,7 +37,7 @@ const EditBookmarkButton: FC<{
           onFocus={onFocus}
           onBlur={onBlur}
           onClick={() => setOpen(!open)}
-          className="flex size-7 items-center justify-center rounded-lg transition-colors duration-200 hover:bg-surface-hover"
+          className="hover:bg-surface-hover flex size-7 items-center justify-center rounded-lg transition-colors duration-200"
           onKeyDown={handleKeyDown}
         >
           <EditIcon />

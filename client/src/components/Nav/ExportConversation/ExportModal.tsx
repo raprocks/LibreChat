@@ -120,7 +120,7 @@ export default function ExportModal({
                     />
                     <label
                       htmlFor="includeOptions"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
+                      className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
                     >
                       {exportOptionsSupport
                         ? localize('com_nav_enabled')
@@ -142,7 +142,7 @@ export default function ExportModal({
                   />
                   <label
                     htmlFor="exportBranches"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
+                    className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
                   >
                     {exportBranchesSupport
                       ? localize('com_nav_enabled')
@@ -159,7 +159,7 @@ export default function ExportModal({
                     <Checkbox id="recursive" checked={recursive} onCheckedChange={setRecursive} />
                     <label
                       htmlFor="recursive"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
+                      className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 dark:text-gray-50"
                     >
                       {localize('com_nav_export_recursive')}
                     </label>

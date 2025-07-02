@@ -70,13 +70,13 @@ export default function FileContext({
               <label className="text-token-text-primary block font-medium">
                 {localize('com_agents_file_context')}
               </label>
-              <CircleHelpIcon className="h-4 w-4 text-text-tertiary" />
+              <CircleHelpIcon className="text-text-tertiary h-4 w-4" />
             </span>
           </HoverCardTrigger>
           <HoverCardPortal>
             <HoverCardContent side={ESide.Top} className="w-80">
               <div className="space-y-2">
-                <p className="text-sm text-text-secondary">
+                <p className="text-text-secondary text-sm">
                   {localize('com_agents_file_context_info')}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default function FileContext({
         </div>
         {/* Disabled Message */}
         {agent_id ? null : (
-          <div className="text-xs text-text-secondary">
+          <div className="text-text-secondary text-xs">
             {localize('com_agents_file_context_disabled')}
           </div>
         )}

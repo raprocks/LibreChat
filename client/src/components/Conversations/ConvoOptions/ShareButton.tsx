@@ -60,7 +60,7 @@ export default function ShareButton({
         className="max-w-[550px]"
         main={
           <div>
-            <div className="h-full py-2 text-text-primary">
+            <div className="text-text-primary h-full py-2">
               {(() => {
                 if (isLoading === true) {
                   return <Spinner className="m-auto h-14 animate-spin" />;
@@ -79,8 +79,8 @@ export default function ShareButton({
               )}
 
               {shareId && (
-                <div className="flex items-center gap-2 rounded-md bg-surface-secondary p-2">
-                  <div className="flex-1 break-all text-sm text-text-secondary">{sharedLink}</div>
+                <div className="bg-surface-secondary flex items-center gap-2 rounded-md p-2">
+                  <div className="text-text-secondary flex-1 text-sm break-all">{sharedLink}</div>
                   <Button
                     size="sm"
                     variant="outline"

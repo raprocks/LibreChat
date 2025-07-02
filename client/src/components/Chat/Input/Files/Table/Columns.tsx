@@ -59,7 +59,7 @@ export const columns: ColumnDef<TFile>[] = [
       return (
         <Button
           variant="ghost"
-          className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+          className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           {localize('com_ui_name')}
@@ -99,7 +99,7 @@ export const columns: ColumnDef<TFile>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-          className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+          className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
         >
           {localize('com_ui_date')}
           <ArrowUpDown className="ml-2 h-3 w-4 sm:h-4 sm:w-4" />
@@ -195,7 +195,7 @@ export const columns: ColumnDef<TFile>[] = [
       return (
         <Button
           variant="ghost"
-          className="px-2 py-0 text-xs hover:bg-surface-hover sm:px-2 sm:py-2 sm:text-sm"
+          className="hover:bg-surface-hover px-2 py-0 text-xs sm:px-2 sm:py-2 sm:text-sm"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           {localize('com_ui_size')}

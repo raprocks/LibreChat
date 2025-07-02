@@ -143,7 +143,7 @@ function Avatar() {
 
       <OGDialogContent className="w-11/12 max-w-sm" style={{ borderRadius: '12px' }}>
         <OGDialogHeader>
-          <OGDialogTitle className="text-lg font-medium leading-6 text-text-primary">
+          <OGDialogTitle className="text-text-primary text-lg leading-6 font-medium">
             {image != null ? localize('com_ui_preview') : localize('com_ui_upload_image')}
           </OGDialogTitle>
         </OGDialogHeader>

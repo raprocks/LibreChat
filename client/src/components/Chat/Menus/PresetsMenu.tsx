@@ -30,7 +30,7 @@ const PresetsMenu: FC = () => {
           tabIndex={0}
           role="button"
           data-testid="presets-button"
-          className="inline-flex size-10 flex-shrink-0 items-center justify-center rounded-xl border border-border-light bg-transparent text-text-primary transition-all ease-in-out hover:bg-surface-tertiary disabled:pointer-events-none disabled:opacity-50 radix-state-open:bg-surface-tertiary"
+          className="border-border-light text-text-primary hover:bg-surface-tertiary radix-state-open:bg-surface-tertiary inline-flex size-10 flex-shrink-0 items-center justify-center rounded-xl border bg-transparent transition-all ease-in-out disabled:pointer-events-none disabled:opacity-50"
         >
           <BookCopy size={16} aria-label="Preset Icon" />
         </TooltipAnchor>
@@ -49,7 +49,7 @@ const PresetsMenu: FC = () => {
           <Content
             side="bottom"
             align="center"
-            className="mt-2 max-h-[495px] overflow-x-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-700 dark:text-white md:min-w-[400px]"
+            className="mt-2 max-h-[495px] overflow-x-hidden rounded-lg border border-gray-200 bg-white shadow-lg md:min-w-[400px] dark:border-gray-700 dark:bg-gray-700 dark:text-white"
           >
             <PresetItems
               presets={presetsQuery.data}
